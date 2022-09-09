@@ -10,6 +10,8 @@ pygmentscodefencesguesssyntax = true
 	mode="toggle"
 	useCDN=false
 	subtitle = "A place where I write about my journey through the tech industry!"
+	favicon = "https://i.imgur.com/yn0lf5g.png"
+
 
 [[params.social]]
 name = "GitHub"
