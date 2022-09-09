@@ -6,27 +6,33 @@ copyright = "© Akshat Sharma"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+
+[sitemap]
+    changefreq = 'monthly'
+    filename = 'sitemap.xml'
+    priority = 0.5
+
 [params]
 	mode="toggle"
-	useCDN=false
+	useCDN=true
 	subtitle = "A place where I write about my journey through the tech industry!"
 	favicon = "https://i.imgur.com/yn0lf5g.png"
 
 
 [[params.social]]
-name = "GitHub"
-icon = "github"
-url = "https://github.com/akshat2602"
+	name = "GitHub"
+	icon = "github"
+	url = "https://github.com/akshat2602"
 
 [[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/akshat2602"
+	name = "Twitter"
+	icon = "twitter"
+	url = "https://twitter.com/akshat2602"
 
 [[params.social]]
-name = "Linkedin"
-icon = "linkedin"
-url = "https://twitter.com/akshat2602"
+	name = "Linkedin"
+	icon = "linkedin"
+	url = "https://twitter.com/akshat2602"
 
 
 [[menu.main]]
