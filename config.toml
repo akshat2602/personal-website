@@ -1,0 +1,44 @@
+baseURL = "https://blogs.akshat-sharma.tech"
+languageCode = "en-us"
+title = "Akshat's Blog"
+theme="archie"
+copyright = "© Akshat Sharma"
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+[params]
+	mode="toggle"
+	useCDN=false
+	subtitle = "A place where I write about my journey through the tech industry!"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/akshat2602"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/akshat2602"
+
+[[params.social]]
+name = "Linkedin"
+icon = "linkedin"
+url = "https://twitter.com/akshat2602"
+
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
