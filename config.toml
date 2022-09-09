@@ -1,6 +1,6 @@
 baseURL = "https://blogs.akshat-sharma.tech"
 languageCode = "en-us"
-title = "Akshat's Blog"
+Title = "Akshat's Blog"
 theme="archie"
 copyright = "© Akshat Sharma"
 pygmentsstyle = "monokai"
@@ -16,7 +16,10 @@ pygmentscodefencesguesssyntax = true
 	mode="toggle"
 	useCDN=true
 	subtitle = "A place where I write about my journey through the tech industry!"
+	description = "A place where I write about my journey through the tech industry!"
 	favicon = "https://i.imgur.com/yn0lf5g.png"
+	og_image = "https://i.imgur.com/yn0lf5g.png"
+	dateFormat = "2 January, 2006"
 
 
 [[params.social]]
@@ -50,3 +53,7 @@ weight = 2
 name = "Tags"
 url = "/tags"
 weight = 3
+
+
+[permalinks]
+  tags = "/tags/:title/"

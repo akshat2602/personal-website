@@ -1,7 +1,7 @@
 ---
 title: "FamPay Interview Experience"
 description: "A post about my interview experience at FamPay for backend engineering"
-date: 2022-08-15T02:01:58+05:30
+date: 2022-08-15
 draft: false
 tldr: "I got into my interview experience with FamPay for Backend Engineering Internship position. The overall interview process consisted of 6 rounds. The process focused mainly on development skills."
 tags: [internship, fampay, backend, development] 
