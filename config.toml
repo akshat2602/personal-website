@@ -13,7 +13,7 @@ pygmentscodefencesguesssyntax = true
     priority = 0.5
 
 [params]
-	mode="toggle"
+	mode="dark"
 	useCDN=true
 	subtitle = "A place where I write about my journey through the tech industry!"
 	description = "A place where I write about my journey through the tech industry!"
@@ -35,7 +35,7 @@ pygmentscodefencesguesssyntax = true
 [[params.social]]
 	name = "Linkedin"
 	icon = "linkedin"
-	url = "https://twitter.com/akshat2602"
+	url = "https://www.linkedin.com/in/akshat-sharma-2602/"
 
 
 [[menu.main]]
