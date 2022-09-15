@@ -6,6 +6,7 @@ copyright = "© Akshat Sharma"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+googleAnalytics: G-EXZTPQWE8N
 
 [sitemap]
     changefreq = 'monthly'
