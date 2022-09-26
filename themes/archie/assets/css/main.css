@@ -1,13 +1,13 @@
 /* Markdown */
 :root{
---maincolor: #ff5555;
---bordercl:#bd93f9;
---callouctcolor:#8be9fd;
---hovercolor:#6272a4;
---darkMaincolor: #f1fa8c;
+--maincolor: #FF0000;
+--bordercl:#FF0000;
+--callouctcolor:#FF0000;
+--hovercolor:#FF0000;
+--darkMaincolor: #FF0000;
 }
 html {
-  color: #232333;
+  /* color: #232333; */
   font-family: 'Roboto Mono', monospace;
   font-size: 15px;
   line-height: 2rem;
@@ -26,7 +26,7 @@ body{
 }
 
 p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   line-height: 2;
 }
 

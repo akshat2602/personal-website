@@ -16,8 +16,8 @@ googleAnalytics = 'G-EXZTPQWE8N'
 [params]
 	mode="dark"
 	useCDN=true
-	subtitle = "A place where I write about my journey through the tech industry!"
-	description = "A place where I write about my journey through the tech industry!"
+	subtitle = "Just a fool trying to write working code. Love developing scalable systems and contributing to open source!"
+	description = "A place where I write about my journey through the tech industry and life!"
 	favicon = "https://i.imgur.com/yn0lf5g.png"
 	og_image = "https://i.imgur.com/yn0lf5g.png"
 	dateFormat = "2 January, 2006"
