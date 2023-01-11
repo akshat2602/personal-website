@@ -1,0 +1,190 @@
+baseURL: "https://akshat-sharma.tech"
+title: Akshat Sharma
+paginate: 5
+theme: PaperModX
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "Just a fool trying to write working code. Love developing scalable systems and contributing to open source!"
+    author:
+        - Akshat
+    mainSections:
+        - home
+        - posts
+    disableAnchoredHeadings: true
+    images: ["index.png"]
+    DateFormat: "2 January, 2006"
+    useCustomAnalytics: false
+    favicon: "https://i.imgur.com/yn0lf5g.png"
+    apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
+
+    defaultTheme: "dark"
+    # disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    ShowWordCount: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowToc: true
+    TocOpen: true
+    TocSide: "left"
+    EnableInstantClick: true
+    EnableImageZoom: true
+
+    # For a commenting system, not really needed right now
+    # commentSystems:
+    #     disqus:
+    #         shortname: reorx
+    #     remark42:
+    #         url: https://remark42.reorx.com
+    #         site: reorx.github.io
+    #     telegramWidget:
+    #         channel: reorx_share
+    #         accentColor: "9077e1"
+    #         limit: 20
+    # defaultCommentSystems:
+    #     remark42: true
+
+    profileMode:
+        enabled: false
+        title: PaperModX
+        imageUrl: "#"
+        imageTitle: my image
+        # imageWidth: 120
+        # imageHeight: 120
+        buttons:
+            - name: archives
+              url: /archives/
+            - name: tags
+              url: /tags/
+
+    homeInfoParams:
+        Title: "a student and an engineer"
+        Content: |
+            welcome to a little part of my life. i write working code(sometimes), contribute to open source,
+            watch anime, play some games in my free time and think about life 24x7
+
+    socialIcons:
+        - name: github-simple
+          url: "https://github.com/akshat2602"
+        - name: linkedin-simple
+          url: "https://linkedin.com/in/akshat-sharma-2602/"
+        - name: twitter-simple
+          url: "https://twitter.com/akshat2602"
+        - name: rss-simple
+          url: "index.xml"
+
+    editPost:
+        URL: "https://github.com/akshat2602/portfolio-blog/tree/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true # to append file path to Edit link
+
+    # label:
+    #     text: "Home"
+    #     icon: icon.png
+    #     iconHeight: 35
+
+    # assets:
+    #     favicon: "<link / abs url>"
+    #     favicon16x16: "<link / abs url>"
+    #     favicon32x32: "<link / abs url>"
+    #     apple_touch_icon: "<link / abs url>"
+    #     safari_pinned_tab: "<link / abs url>"
+
+    # cover:
+    #     hidden: true # hide everywhere but not in structured data
+    #     hiddenInList: true # hide on list pages and home
+    #     hiddenInSingle: true # hide on single page
+
+    # fuseOpts:
+    #     isCaseSensitive: false
+    #     shouldSort: true
+    #     location: 0
+    #     distance: 1000
+    #     threshold: 0.4
+    #     minMatchCharLength: 0
+    #     keys: ["title", "permalink", "summary", "content"]
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        menu:
+            main:
+                # - name: home
+                #   url: /
+                #   weight: 1
+                # - name: newsletter
+                #   url: /newsletter/
+                #   weight: 1
+                - name: tags
+                  url: /tags
+                  weight: 4
+                - name: archives
+                  url: /archives/
+                  weight: 5
+                - name: search
+                  url: /search/
+                  weight: 10
+                - name: "@Author"
+                  url: "https://akshat-sharma.tech"
+                  params:
+                      external: true
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        style: dracula
+        lineNos: false
+        noClasses: false
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
