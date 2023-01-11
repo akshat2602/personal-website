@@ -81,6 +81,8 @@ params:
           url: "https://linkedin.com/in/akshat-sharma-2602/"
         - name: twitter-simple
           url: "https://twitter.com/akshat2602"
+        - name: peerlist
+          url: "https://peerlist.io/akshat2602"
         - name: rss-simple
           url: "index.xml"
 
