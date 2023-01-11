@@ -140,8 +140,8 @@ languages:
                 - name: search
                   url: /search/
                   weight: 10
-                - name: "@Author"
-                  url: "https://akshat-sharma.tech"
+                - name: "resume"
+                  url: "https://links.akshat-sharma.tech/resume"
                   params:
                       external: true
 
