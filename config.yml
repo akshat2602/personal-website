@@ -86,7 +86,7 @@ params:
         - name: rss-simple
           url: "index.xml"
         - name: email
-          url: "mailto: mail@akshatsharma.xyz"
+          url: "mailto: akshatsharma2602@gmail.com"
 
     editPost:
         URL: "https://github.com/akshat2602/blog-build-repo/tree/content"
