@@ -1,4 +1,4 @@
-baseURL: "https://akshat-sharma.tech"
+baseURL: "https://akshatsharma.xyz"
 title: Akshat Sharma
 paginate: 5
 theme: PaperModX
@@ -87,7 +87,7 @@ params:
           url: "index.xml"
 
     editPost:
-        URL: "https://github.com/akshat2602/portfolio-blog/tree/content"
+        URL: "https://github.com/akshat2602/blog-build-repo/tree/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
@@ -143,7 +143,7 @@ languages:
                   url: /search/
                   weight: 10
                 - name: "resume"
-                  url: "https://links.akshat-sharma.tech/resume"
+                  url: "https://links.akshatsharma.xyz/resume"
                   params:
                       external: true
 
