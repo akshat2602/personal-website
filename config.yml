@@ -85,6 +85,8 @@ params:
           url: "https://peerlist.io/akshat2602"
         - name: rss-simple
           url: "index.xml"
+        - name: email
+          url: "mailto: mail@akshatsharma.xyz"
 
     editPost:
         URL: "https://github.com/akshat2602/blog-build-repo/tree/content"
