@@ -18,6 +18,7 @@ params:
     mainSections:
         - home
         - posts
+        - notes
     disableAnchoredHeadings: true
     images: ["index.png"]
     DateFormat: "2 January, 2006"
@@ -129,12 +130,15 @@ languages:
         weight: 1
         menu:
             main:
-                # - name: home
-                #   url: /
-                #   weight: 1
+                - name: posts
+                  url: /posts
+                  weight: 1
                 # - name: newsletter
                 #   url: /newsletter/
                 #   weight: 1
+                - name: notes
+                  url: /notes
+                  weight: 4
                 - name: tags
                   url: /tags
                   weight: 4
