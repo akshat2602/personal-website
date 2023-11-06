@@ -1,6 +1,6 @@
 ---
 title: GFS
-date: 6th September 2023
+date: 06 Sep 2023
 tags: [subject/distributed-system, distributed-storage]
 ---
 Personal Notes - [[GFS]]

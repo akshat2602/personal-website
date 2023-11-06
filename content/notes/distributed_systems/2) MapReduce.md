@@ -1,6 +1,6 @@
 ---
 title: MapReduce
-date: 30th August 2023
+date: 30 Aug 2023
 tags: [subject/distributed-system, distributed-computing]
 ---
 # TIL:

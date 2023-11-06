@@ -1,6 +1,6 @@
 ---
 title: Spanner
-date: 1st November 2023
+date: 01 Nov 2023
 tags: [subject/distributed-system, distributed-storage]
 ---
 # Notes

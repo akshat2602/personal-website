@@ -1,6 +1,6 @@
 ---
 title: Eventual Consistency
-date: 18th October 2023
+date: 18 Oct 2023
 tags: [subject/distributed-system, distributed-storage, consistency]
 ---
 # Notes

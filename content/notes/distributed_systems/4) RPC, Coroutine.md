@@ -1,6 +1,6 @@
 ---
 title: RPC, Couroutines
-date: 11th September 2023
+date: 11 Sep 2023
 tags: [subject/distributed-system]
 ---
 Personal Notes - [[Coroutines]]

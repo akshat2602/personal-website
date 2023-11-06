@@ -1,6 +1,6 @@
 ---
 title: Byzantine Failures
-date: 4th October 2023
+date: 04 Oct 2023
 tags: [subject/distributed-system, research/failures]
 ---
 Readings - [[Practical Byzantine Fault Tolerance.pdf]] [[Byzantine PAXOS.pdf]]

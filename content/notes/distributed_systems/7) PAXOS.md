@@ -1,6 +1,6 @@
 ---
 title: PAXOS
-date: 20th September 2023
+date: 20 Sep 2023
 tags: [subject/distributed-system, consensus]
 ---
 # RAFT Notes

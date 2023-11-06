@@ -1,6 +1,6 @@
 ---
 title: PAXOS Made Live
-date: 27th September 2023
+date: 27 Sep 2023
 tags: [subject/distributed-system, consensus]
 ---
 Personal Notes - [[PAXOS Made Live]]

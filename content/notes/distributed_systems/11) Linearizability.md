@@ -1,6 +1,6 @@
 ---
 title: Linearizability
-date: 16th October 2023
+date: 16 Oct 2023
 tags: [subject/distributed-system, consistency]
 ---
 # Notes

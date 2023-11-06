@@ -1,6 +1,6 @@
 ---
 title: Introduction
-date: 28th August 2023
+date: 28 Aug 2023
 tags: [subject/distributed-system]
 ---
 ## Grading

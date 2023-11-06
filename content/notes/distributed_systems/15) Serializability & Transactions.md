@@ -1,6 +1,6 @@
 ---
 title: Serializability
-date: 30th October 2023
+date: 30 Oct 2023
 tags: [subject/distributed-system]
 ---
 # Important Reading to help understand:
