@@ -12,7 +12,7 @@ enableEmoji: true
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "Just a fool trying to write working code. Love developing scalable systems and contributing to open source!"
+    description: "hi 👋, my name is Akshat Sharma."
     author:
         - Akshat
     mainSections:
@@ -72,8 +72,11 @@ params:
     homeInfoParams:
         Title: "a student and an engineer"
         Content: |
-            welcome to a little part of my life. i write working code(sometimes), contribute to open source,
-            watch anime, play some games in my free time and think about life 24x7
+            hi 👋, my name is Akshat Sharma. 
+
+            i write code(sometimes), like to consume all kinds of content, play some games in my free time and think about life 24x7.
+
+            posting anything that I feel might be relevant(lecture notes/random tech posts/thoughts)
 
     socialIcons:
         - name: github-simple
