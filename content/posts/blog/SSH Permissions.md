@@ -8,7 +8,7 @@ date: 07 Nov 2023
 
 ### Set Correct SSH Directory Permissions in Linux
 
-If you ever encounter the above error, you can set correct ssh directory permissions on the **.ssh** directory using the **chmod** command.
+If you ever encounter errors while trying to SSH into a server, you can set correct ssh directory permissions on the **.ssh** directory using the **chmod** command.
 
 ```
 # chmod u+rwx,go-rwx ~/.ssh
@@ -45,5 +45,5 @@ OR
 
 ---
 
-References:
+# References:
 https://www.tecmint.com/set-ssh-directory-permissions-in-linux/
