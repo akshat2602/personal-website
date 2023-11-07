@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: 1) Introduction
 date: 28 Aug 2023
 tags: [subject/distributed-system]
 ---

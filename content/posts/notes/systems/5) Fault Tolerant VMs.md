@@ -1,5 +1,5 @@
 ---
-title: Fault Tolerant VMs
+title: 5) Fault Tolerant VMs
 date: 13 Sep 2023
 tags: [subject/distributed-system]
 ---

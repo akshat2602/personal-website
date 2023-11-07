@@ -1,5 +1,5 @@
 ---
-title: Serializability
+title: 15) Serializability
 date: 30 Oct 2023
 tags: [subject/distributed-system]
 ---

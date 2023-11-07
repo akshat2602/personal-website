@@ -1,5 +1,5 @@
 ---
-title: Byzantine Failures
+title: 10) Byzantine Failures
 date: 04 Oct 2023
 tags: [subject/distributed-system, research/failures]
 ---

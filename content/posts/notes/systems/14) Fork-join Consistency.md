@@ -1,5 +1,5 @@
 ---
-title: Fork-join Consistency
+title: 14) Fork-join Consistency
 date: 25 Oct 2023
 tags: [subject/distributed-system, consistency]
 ---
