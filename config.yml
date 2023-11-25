@@ -12,7 +12,7 @@ enableEmoji: true
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "hi 👋, my name is Akshat Sharma."
+    description: "hi 👋, my name is Akshat Sharma, trying to figure out life one PR at a time"
     author:
         - Akshat
     mainSections:
@@ -72,9 +72,9 @@ params:
     homeInfoParams:
         Title: "a student and an engineer"
         Content: |
-            hi 👋, my name is Akshat Sharma. 
-
-            i write code(sometimes), like to consume all kinds of content, play some games in my free time and think about life 24x7.
+            hi 👋, my name is Akshat Sharma, trying to figure out life one PR at a time
+            
+            some things about me - i like to consume all kinds of content, play some games in my free time and think about life 24x7.
 
             posting anything that I feel might be relevant(lecture notes/random tech posts/thoughts)
 
@@ -85,7 +85,7 @@ params:
           url: "https://linkedin.com/in/akshat-sharma-2602/"
         # - name: twitter-simple
         #   url: "https://twitter.com/akshat2602"
-        # - name: peerlist
+        - name: peerlist
           url: "https://peerlist.io/akshat2602"
         - name: rss-simple
           url: "index.xml"
