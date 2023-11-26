@@ -1,5 +1,5 @@
 ---
-title: 20) Permissioned Chains
+title: 21) BFT Membership
 date: 20 Nov 2023
 tags: [subject/distributed-system]
 ---
