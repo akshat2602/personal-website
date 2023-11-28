@@ -27,7 +27,7 @@ params:
     apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
 
     defaultTheme: "dark"
-    # disableThemeToggle: true
+    disableThemeToggle: true
     ShowShareButtons: true
     ShowReadingTime: true
     ShowWordCount: true
@@ -57,17 +57,18 @@ params:
     #     remark42: true
 
     profileMode:
-        enabled: false
-        title: PaperModX
-        imageUrl: "#"
-        imageTitle: my image
-        # imageWidth: 120
-        # imageHeight: 120
+        enabled: true
+        title: "hi 👋, my name is Akshat Sharma"
+        subtitle: "student/engineer trying to figure out life one PR at a time"
+        imageUrl: "akshat.png"
+        imageTitle: Akshat Sharma
+        imageWidth: 450
+        imageHeight: 450
         buttons:
-            - name: archives
-              url: /archives/
-            - name: tags
-              url: /tags/
+            - name: posts
+              url: /posts/
+            - name: resume
+              url: "https://resume.akshatsharma.xyz/"
 
     homeInfoParams:
         Title: "a student and an engineer"
@@ -79,21 +80,21 @@ params:
             posting anything that I feel might be relevant(lecture notes/random tech posts/thoughts)
 
     socialIcons:
-        - name: github-simple
+        - name: github
           url: "https://github.com/akshat2602"
-        - name: linkedin-simple
+        - name: linkedin
           url: "https://linkedin.com/in/akshat-sharma-2602/"
-        # - name: twitter-simple
-        #   url: "https://twitter.com/akshat2602"
-        - name: peerlist
-          url: "https://peerlist.io/akshat2602"
-        - name: rss-simple
-          url: "index.xml"
+        # - name: peerlist
+        #   url: "https://peerlist.io/akshat2602"
+        - name: stackoverflow
+          url: "https://stackoverflow.com/users/16431252/akshat-sharma"
         - name: email
           url: "mailto: mail@akshatsharma.xyz"
+        - name: rss
+          url: "index.xml"
 
     editPost:
-        URL: "https://github.com/akshat2602/blog-build-repo/tree/content"
+        URL: "https://github.com/akshat2602/personal-website/tree/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
