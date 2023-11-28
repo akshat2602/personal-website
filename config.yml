@@ -62,8 +62,8 @@ params:
         subtitle: "student/engineer trying to figure out life one PR at a time"
         imageUrl: "akshat.png"
         imageTitle: Akshat Sharma
-        imageWidth: 450
-        imageHeight: 450
+        imageWidth: 350
+        imageHeight: 350
         buttons:
             - name: posts
               url: /posts/
