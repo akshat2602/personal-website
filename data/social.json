@@ -1,0 +1,34 @@
+{
+    "links": [
+        {
+            "name": "github",
+            "url": "https://github.com/akshat2602",
+            "image": "social/github.svg"
+        },
+        {
+            "name": "linkedin",
+            "url": "https://linkedin.com/in/akshat-sharma-2602/",
+            "image": "social/linkedin.svg"
+        },
+        {
+            "name": "stackoverflow",
+            "url": "https://stackoverflow.com/users/16431252/akshat-sharma",
+            "image": "social/stackoverflow.svg"
+        },
+        {
+            "name": "calcom",
+            "url": "https://cal.com/akshat2602",
+            "image": "social/calcom.svg"
+        },
+        {
+            "name": "email",
+            "url": "mailto: mail@akshatsharma.xyz",
+            "image": "social/email.svg"
+        },
+        {
+            "name": "rss",
+            "url": "index.xml",
+            "image": "social/rss.svg"
+        }
+    ]
+}

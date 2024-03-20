@@ -1,130 +1,22 @@
 baseURL: "https://akshatsharma.xyz"
 title: Akshat Sharma
-paginate: 5
-theme: PaperModX
-
-enableInlineShortcodes: true
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
-enableEmoji: true
+titlepage: Home
+paginate: 4
+theme: hugo-winston-theme
 
 params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "hi 👋, my name is Akshat Sharma, trying to figure out life one PR at a time"
-    author:
-        - Akshat
-    mainSections:
-        - home
-        - posts
-        - notes
-    disableAnchoredHeadings: true
-    images: ["index.png"]
-    DateFormat: "2 January, 2006"
-    useCustomAnalytics: false
-    favicon: "https://i.imgur.com/yn0lf5g.png"
-    apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
+    addDot: true
+    addFrame: true
+    highlightColor: '#6272A4'
+    baseColor: '#282a36'
+    baseOffsetColor: '#44475a'
+    headingColor: '#f8f8f2'
+    textColor: '#f8f8f2'
+    dotColor: '#6272A4'
+    showAuthorOnHomepage: true
+    showAuthorOnPosts: false
+    showIntroContentOnHomepage: true
 
-    defaultTheme: "dark"
-    disableThemeToggle: true
-    ShowShareButtons: true
-    ShowReadingTime: true
-    ShowWordCount: true
-    # disableSpecial1stPost: true
-    displayFullLangName: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    ShowToc: true
-    TocOpen: true
-    TocSide: "left"
-    EnableInstantClick: true
-    EnableImageZoom: true
-
-    # For a commenting system, not really needed right now
-    # commentSystems:
-    #     disqus:
-    #         shortname: reorx
-    #     remark42:
-    #         url: https://remark42.reorx.com
-    #         site: reorx.github.io
-    #     telegramWidget:
-    #         channel: reorx_share
-    #         accentColor: "9077e1"
-    #         limit: 20
-    # defaultCommentSystems:
-    #     remark42: true
-
-    profileMode:
-        enabled: true
-        title: "hi 👋, my name is Akshat Sharma"
-        subtitle: "student/engineer trying to figure out life one PR at a time"
-        imageUrl: "akshat.png"
-        imageTitle: Akshat Sharma
-        imageWidth: 350
-        imageHeight: 350
-        buttons:
-            - name: posts
-              url: /posts/
-            - name: resume
-              url: "https://resume.akshatsharma.xyz/"
-
-    homeInfoParams:
-        Title: "a student and an engineer"
-        Content: |
-            hi 👋, my name is Akshat Sharma, trying to figure out life one PR at a time
-            
-            some things about me - i like to consume all kinds of content, play some games in my free time and think about life 24x7.
-
-            posting anything that I feel might be relevant(lecture notes/random tech posts/thoughts)
-
-    socialIcons:
-        - name: github
-          url: "https://github.com/akshat2602"
-        - name: linkedin
-          url: "https://linkedin.com/in/akshat-sharma-2602/"
-        # - name: peerlist
-        #   url: "https://peerlist.io/akshat2602"
-        - name: stackoverflow
-          url: "https://stackoverflow.com/users/16431252/akshat-sharma"
-        - name: calcom
-          url: "https://cal.com/akshat2602"
-        - name: email
-          url: "mailto: mail@akshatsharma.xyz"
-        - name: rss
-          url: "index.xml"
-
-    editPost:
-        URL: "https://github.com/akshat2602/personal-website/tree/master/content"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
-
-    # label:
-    #     text: "Home"
-    #     icon: icon.png
-    #     iconHeight: 35
-
-    # assets:
-    #     favicon: "<link / abs url>"
-    #     favicon16x16: "<link / abs url>"
-    #     favicon32x32: "<link / abs url>"
-    #     apple_touch_icon: "<link / abs url>"
-    #     safari_pinned_tab: "<link / abs url>"
-
-    # cover:
-    #     hidden: true # hide everywhere but not in structured data
-    #     hiddenInList: true # hide on list pages and home
-    #     hiddenInSingle: true # hide on single page
-
-    # fuseOpts:
-    #     isCaseSensitive: false
-    #     shouldSort: true
-    #     location: 0
-    #     distance: 1000
-    #     threshold: 0.4
-    #     minMatchCharLength: 0
-    #     keys: ["title", "permalink", "summary", "content"]
 
 minify:
     disableXML: true
@@ -139,21 +31,12 @@ languages:
                 - name: posts
                   url: /posts
                   weight: 1
-                # - name: newsletter
-                #   url: /newsletter/
-                #   weight: 1
-                # - name: notes
-                #   url: /notes
-                #   weight: 4
+                # - name: about
+                  # url: /about
+                  # weight: 2
                 - name: tags
                   url: /tags
                   weight: 4
-                - name: archives
-                  url: /archives/
-                  weight: 5
-                - name: search
-                  url: /search/
-                  weight: 10
                 - name: "resume"
                   url: "https://resume.akshatsharma.xyz/"
                   params:
@@ -163,12 +46,6 @@ outputs:
     home:
         - HTML
         - RSS
-        - JSON
-
-taxonomies:
-    category: categories
-    tag: tags
-    series: series
 
 markup:
     goldmark:
