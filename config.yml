@@ -88,7 +88,7 @@ params:
         #   url: "https://peerlist.io/akshat2602"
         - name: stackoverflow
           url: "https://stackoverflow.com/users/16431252/akshat-sharma"
-        - name: calcom
+        - name: "Cal.com"
           url: "https://cal.com/akshat2602"
         - name: email
           url: "mailto: mail@akshatsharma.xyz"
