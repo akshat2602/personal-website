@@ -12,7 +12,7 @@ Last week, me and my team, **http418**, won the [MongoDB Gen AI Hackathon](https
 
 ---
 ### TL;DR: 
-Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30-second highlight clips from videos. Leveraging cutting-edge embeddings and prompt engineering, we automated the creation of engaging content. We used Nomic AI's embeddings model, transcribed video audio for text summaries, and extracted video clip embeddings stored in MongoDB. Stitching together the most relevant clips, we added AI-generated narration for a complete TikTok-ready highlight. Check out our project code on GitHub and explore AWS services for similar functionality. (This tldr was generated using ChatGPT)"
+Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30-second highlight clips from videos. Leveraging cutting-edge embeddings and prompt engineering, we automated the creation of engaging content. We used Nomic AI's embeddings model, transcribed video audio for text summaries, and extracted video clip embeddings stored in MongoDB. Stitching together the most relevant clips, we added AI-generated narration for a complete TikTok-ready highlight. Check out our project code on GitHub and explore AWS services for similar functionality. (Guess who wrote this TL;DR)
 
 {{< figure src="/mongo_winning_shot.png" caption="After hours of building, the money shot" align="center">}}
 
