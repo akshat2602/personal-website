@@ -11,7 +11,7 @@ weight: 100
 Last week, me and my team, **http418**, won the [MongoDB Gen AI Hackathon](https://lu.ma/MongoDB-GenAI-NYC). We created a tool called "tiktokify" which can automatically generate a small 30 second highlight clip from a video using clever prompt engineering and SoTA(State-of-The-Art) embedding models. We won the "Best Use of Nomic Platform" prize and here is my account of what we built and how we won.
 
 ---
-### TL;DR(presneted by ChatGPT): 
+### TL;DR(presented by ChatGPT): 
 Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30-second highlight clips from videos. Leveraging cutting-edge embeddings and prompt engineering, we automated the creation of engaging content. We used Nomic AI's embeddings model, transcribed video audio for text summaries, and extracted video clip embeddings stored in MongoDB. Stitching together the most relevant clips, we added AI-generated narration for a complete TikTok-ready highlight. Check out our project code on GitHub and explore AWS services for similar functionality.
 
 {{< figure src="/mongo_winning_shot.png" caption="After hours of building, the money shot" align="center">}}
