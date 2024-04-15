@@ -3,6 +3,7 @@ title: "tiktokify: A Hackathon winning product"
 description: "A post detailing my experience at the MongoDB Gen AI Hackathon and the product me and my team built over the span of 8 hours."
 date: 2024-04-14
 draft: false
+tldr: Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30-second highlight clips from videos. Leveraging cutting-edge embeddings and prompt engineering, we automated the creation of engaging content. We used Nomic AI's embeddings model, transcribed video audio for text summaries, and extracted video clip embeddings stored in MongoDB. Stitching together the most relevant clips, we added AI-generated narration for a complete TikTok-ready highlight. Check out our project code on GitHub and explore AWS services for similar functionality. (Generated using ChatGPT)
 tags: [hackathon, genAI, development, embeddings, mongoDB]
 weight: 100
 ---
@@ -66,7 +67,7 @@ Okay, so now that embeddings are out of the way the basic idea of what we wanted
 We decided to use a very rudimentary approach to create embeddings from the video. We extracted frames, at every 0.5 second, from the video and fed them to the embedding model to generate embeddings. We stored these embeddings along with their timestamps in our MongoDB Atlas instance. 
 
 #### Step 3 & 4: Stitching it all together
-Now that we have our video embeddings and our search query vector, we just had to create an index in our MongoDB and run a vector search using our query vector. We got the top 25 most relevant images and sorted them in an ascending order and merged them usign ffmpeg. Again, using ffmpeg, we added in an AI generated speech-to-text of the text summary in the video. 
+Now that we have our video embeddings and our search query vector, we just had to create an index in our MongoDB and run a vector search using our query vector. We got the top 25 most relevant images and sorted them in an ascending order and merged them using ffmpeg. Again, using ffmpeg, we added in an AI generated speech-to-text of the text summary in the video. 
 
 We have a football highlight completely using AI up and running!!! 
 
