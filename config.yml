@@ -26,7 +26,7 @@ params:
     favicon: "https://i.imgur.com/yn0lf5g.png"
     apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
 
-    defaultTheme: "dark"
+    defaultTheme: "light"
     disableThemeToggle: true
     ShowShareButtons: true
     ShowReadingTime: true
