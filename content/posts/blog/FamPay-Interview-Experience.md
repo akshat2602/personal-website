@@ -5,7 +5,6 @@ date: 2022-08-15
 draft: false
 tldr: "I got into my interview experience with FamPay for Backend Engineering Internship position. The overall interview process consisted of 6 rounds. The process focused mainly on development skills."
 tags: [internship, fampay, backend, development]
-weight: 100
 ---
 
 I had applied at FamPay through their [Careers](https://apply.fampay.in/) page. The process consisted of uploading my resume and then answering some questions regarding the projects I had done and why I wanted to join FamPay.
