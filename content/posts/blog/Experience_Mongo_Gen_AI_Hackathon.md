@@ -72,7 +72,7 @@ Okay, so now that embeddings are out of the way the basic idea of what we wanted
 We decided to use a very rudimentary approach to create embeddings from the video. We extracted frames, at every 0.5 second, from the video and fed them to the embedding model to generate embeddings. We stored these embeddings along with their timestamps in our MongoDB Atlas instance. 
 
 #### Step 3 & 4: Stitching it all together
-Now that we have our video embeddings and our search query vector, we just had to create an index in our MongoDB and run a vector search using our query vector. We got the top 25 most relevant images and sorted them in an ascending order and merged them using ffmpeg. Again, using ffmpeg, we added in an AI generated speech-to-text of the text summary in the video. 
+Now that we have our video embeddings and our search query vector, we just had to create an index in our MongoDB and run a cosine similarity search using our query vector. We got the top 50 most relevant images, sorted them in an ascending order and then extracted short 0.5 seconds clips starting from those timestamps. For example, let's say I have the most relevant timestamp as 12.5 second, I will extract a clip that has the range of 12.5-13 seconds, in this way we got a 25(50 frames * 0.5 sec clips) second highlight video. These clips were then merged using ffmpeg and then again, using ffmpeg, we added in an AI generated speech-to-text of the text summary in the video. 
 
 We have a football highlight completely using AI up and running!!! 
 
