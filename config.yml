@@ -59,7 +59,7 @@ params:
     profileMode:
         enabled: false
         title: "hi 👋, my name is Akshat Sharma"
-        subtitle: "student/engineer trying to figure out life one PR at a time"
+        subtitle: "student/engineer, always trying to learn things"
         imageUrl: "akshat.png"
         imageTitle: Akshat Sharma
         imageWidth: 350
@@ -73,12 +73,7 @@ params:
     homeInfoParams:
         Title: "a student and an engineer"
         Content: |
-            hi 👋, my name is Akshat Sharma, trying to figure out life one PR at a time
-            
-            some things about me - i like to consume all kinds of content, play some games in my free time and think about life 24x7.
-
-            posting anything that I feel might be relevant(lecture notes/random tech posts/thoughts)
-
+            hi 👋, my name is Akshat Sharma, I'm currently a CS grad student at Stony Brook University working in Distributed Systems.
     socialIcons:
         - name: github
           url: "https://github.com/akshat2602"
