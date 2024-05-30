@@ -43,18 +43,20 @@ params:
     EnableImageZoom: true
 
     # For a commenting system, not really needed right now
-    # commentSystems:
-    #     disqus:
-    #         shortname: reorx
-    #     remark42:
-    #         url: https://remark42.reorx.com
-    #         site: reorx.github.io
-    #     telegramWidget:
-    #         channel: reorx_share
-    #         accentColor: "9077e1"
-    #         limit: 20
-    # defaultCommentSystems:
-    #     remark42: true
+    commentSystems:
+        # disqus:
+        #     shortname: reorx
+        # remark42:
+        #     url: https://remark42.reorx.com
+        #     site: reorx.github.io
+        # telegramWidget:
+        #     channel: reorx_share
+        #     accentColor: "9077e1"
+        #     limit: 20
+        giscus: 
+          shortname: akshat2602
+    defaultCommentSystems:
+        giscus: true
 
     profileMode:
         enabled: false
