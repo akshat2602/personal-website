@@ -12,7 +12,7 @@ enableEmoji: true
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "hi 👋, my name is Akshat Sharma, trying to figure out life one PR at a time"
+    description: "hi 👋, my name is Akshat Sharma"
     author:
         - Akshat
     mainSections:
@@ -75,7 +75,7 @@ params:
     homeInfoParams:
         Title: "a student and an engineer"
         Content: |
-            hi 👋, my name is Akshat Sharma, I'm currently a CS grad student at Stony Brook University working in Distributed Systems.
+            hi 👋, my name is Akshat Sharma, I'm currently a CS grad student at Stony Brook University working under Prof. Erez Zadok in File Systems and Storage Lab(FSL). I'm currently researching secure archival storage systems and their applications. I'm interested in all things systems and have worked in Distributed Systems before working in FSL. I post things that I find interesting/notes that I want to share with the world.
     socialIcons:
         - name: github
           url: "https://github.com/akshat2602"
