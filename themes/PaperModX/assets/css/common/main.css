@@ -65,6 +65,20 @@ mark {
     overflow: initial;  /* fix <mark> edge get cut */
 }
 
+
+.first-entry .entry-content a {
+    font-weight: 500;
+    color: var(--primary);
+    box-shadow: var(--link-underline-shadow);
+    transition: var(--link-transition);
+}
+
+.first-entry .entry-content a:hover {
+    color: var(--link-hover-color);
+    box-shadow: var(--link-hover-underline-shadow);
+}
+
+
 @media screen and (max-width: 500px) {
     .first-entry .entry-header h1 {
         font-size: 30px;
