@@ -48,33 +48,8 @@ $sidenote-offset: 1rem;
     }
 }
 
-.sidenote-content.sidenote-left {
-    left: 0;
-    margin-left: -($sidenote-width + $sidenote-offset);
-}
-
-@media screen and (max-width: $maximum-width) {
-    .sidenote-content.sidenote-left {
-        display: none;
-    }
-}
-
 .sidenote-delimiter {
     display: none;
-}
-
-@media screen and (max-width: $maximum-width) {
-    .sidenote-content.sidenote-left {
-        position: static;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .sidenote-checkbox:checked~.sidenote-content.sidenote-left {
-        display: block;
-    }
 }
 
 @media screen and (max-width: $maximum-width) {

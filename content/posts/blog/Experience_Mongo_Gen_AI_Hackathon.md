@@ -22,7 +22,7 @@ Going in, we knew we wanted to do something video related because let's face it,
 
 > {{< figure src="/RAG.png" align="center" >}}
 
-{{% sidenote "right" "Retrieval Augmented Generation(RAGs) explained" %}} This image was taken from Pinecone's article about [RAGs](https://www.pinecone.io/learn/retrieval-augmented-generation/) {{% /sidenote %}}
+{{% sidenote "right" "rag explanation" "Retrieval Augmented Generation(RAGs) explained" %}} This image was taken from Pinecone's article about [RAGs](https://www.pinecone.io/learn/retrieval-augmented-generation/) {{% /sidenote %}}
 
 
 We naturally looked at TikTok, Instagram Reels and YouTube Shorts and how they have blown up the short video content space. Something we realized is that the sort of stuff that people like looking at is very short 15-30 seconds summary of any and every thing, let it be programming tutorials, videos about reddit threads, football goals, cricket clips everything is TikTokable. What if we can make this content creation space automated? What if we help make the [dead internet theory](https://en.wikipedia.org/wiki/Dead_Internet_theory) come true? 
@@ -40,7 +40,7 @@ Embeddings are basically numerical representations of real-world data in a form 
 
 > {{< figure src="/Embeddings.png" align="center" >}} 
 
-{{% sidenote "right" "A visual aid for learning embeddings" %}} The image was taken from Pinecone's article about [embeddings](https://www.pinecone.io/learn/vector-embeddings/) {{% /sidenote %}}
+{{% sidenote "right" "embeddings" "A visual aid for learning embeddings" %}} The image was taken from Pinecone's article about [embeddings](https://www.pinecone.io/learn/vector-embeddings/) {{% /sidenote %}}
 
 
 We initially were gonna use OpenAI's [CLIP](https://openai.com/research/clip) embeddings model but, [Andriy](https://www.linkedin.com/in/andriymulyar/), the CTO of [Nomic AI](https://www.nomic.ai/), told us about their embedding model which had a larger token size than CLIP by almost a scale of 100. So naturally, we decided to use [Nomic's Embedding Model](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5) instead.
