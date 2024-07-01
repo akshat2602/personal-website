@@ -1,0 +1,8 @@
+<span class="sidenote">
+    <label class="sidenote-label" for="{{ .Get 0 }}">{{ .Get 1 }}</label>
+    <input class="sidenote-checkbox" type="checkbox" id="{{ .Get 0 }}"></input>
+    <span class="sidenote-content
+    {{ if eq .Site.Params.tocSide "left" }}sidenote-right{{else}}sidenote-left{{ end }}">{{- .Inner | safeHTML | markdownify -}}</span>
+</span>
+
+<!-- Inspired by https://danilafe.com/blog/sidenotes/ and https://github.com/brickfrog/hugo-PaperModulo -->

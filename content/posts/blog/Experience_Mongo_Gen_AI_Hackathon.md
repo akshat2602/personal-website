@@ -21,10 +21,9 @@ Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30
 Going in, we knew we wanted to do something video related because let's face it, RAGs(Retrieval Augmented Generations) have already been proven to work pretty well and if you want create a high quality RAG then it becomes all about the quality of data. We wanted to try something different, something new, something video related, something which none of us had tried before. After the breakfast and some very quick talks by the sponsors of the hackathons, we started brainstorming about things we could try out in the video space.
 
 > {{< figure src="/RAG.png" align="center" >}}
->
-> <cite>Retrieval Augmented Generation(RAGs) explained[^1]</cite>
 
-[^1]: This image was taken from Pinecone's article about RAGs. https://www.pinecone.io/learn/retrieval-augmented-generation/
+{{% sidenote "right" "Retrieval Augmented Generation(RAGs) explained" %}} This image was taken from Pinecone's article about [RAGs](https://www.pinecone.io/learn/retrieval-augmented-generation/) {{% /sidenote %}}
+
 
 We naturally looked at TikTok, Instagram Reels and YouTube Shorts and how they have blown up the short video content space. Something we realized is that the sort of stuff that people like looking at is very short 15-30 seconds summary of any and every thing, let it be programming tutorials, videos about reddit threads, football goals, cricket clips everything is TikTokable. What if we can make this content creation space automated? What if we help make the [dead internet theory](https://en.wikipedia.org/wiki/Dead_Internet_theory) come true? 
 
@@ -40,10 +39,9 @@ Before we dive into the approach, one very important thing which we used, that I
 Embeddings are basically numerical representations of real-world data in a form which is easier for Neural Nets to understand. Embeddings are created in such a way that similar types of objects are placed near to each other in a latent space. Typically embeddings have been representations of only one form of data(either image, audio or text) but, we wanted a multimodal embedding model because of obvious reasons.
 
 > {{< figure src="/Embeddings.png" align="center" >}} 
-> 
-> <cite>A visual aid for learning embeddings[^2]</cite>
 
-[^2]: The image was taken from Pinecone's article about embeddings. https://www.pinecone.io/learn/vector-embeddings/
+{{% sidenote "right" "A visual aid for learning embeddings" %}} The image was taken from Pinecone's article about [embeddings](https://www.pinecone.io/learn/vector-embeddings/) {{% /sidenote %}}
+
 
 We initially were gonna use OpenAI's [CLIP](https://openai.com/research/clip) embeddings model but, [Andriy](https://www.linkedin.com/in/andriymulyar/), the CTO of [Nomic AI](https://www.nomic.ai/), told us about their embedding model which had a larger token size than CLIP by almost a scale of 100. So naturally, we decided to use [Nomic's Embedding Model](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5) instead.
 

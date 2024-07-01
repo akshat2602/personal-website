@@ -26,8 +26,8 @@ params:
     favicon: "https://i.imgur.com/yn0lf5g.png"
     apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
 
-    defaultTheme: "light"
-    disableThemeToggle: true
+    defaultTheme: "dark"
+    disableThemeToggle: false
     ShowShareButtons: true
     ShowReadingTime: true
     ShowWordCount: true
@@ -43,20 +43,20 @@ params:
     EnableImageZoom: true
 
     # For a commenting system, not really needed right now
-    commentSystems:
-        # disqus:
-        #     shortname: reorx
-        # remark42:
-        #     url: https://remark42.reorx.com
-        #     site: reorx.github.io
-        # telegramWidget:
-        #     channel: reorx_share
-        #     accentColor: "9077e1"
-        #     limit: 20
-        giscus: 
-          shortname: akshat2602
-    defaultCommentSystems:
-        giscus: true
+    # commentSystems:
+    #     disqus:
+    #         shortname: reorx
+    #     remark42:
+    #         url: https://remark42.reorx.com
+    #         site: reorx.github.io
+    #     telegramWidget:
+    #         channel: reorx_share
+    #         accentColor: "9077e1"
+    #         limit: 20
+    #     giscus: 
+    #       shortname: akshat2602
+    # defaultCommentSystems:
+    #     giscus: true
 
     profileMode:
         enabled: false
@@ -85,12 +85,16 @@ params:
           url: "https://github.com/akshat2602"
         - name: linkedin
           url: "https://linkedin.com/in/akshat-sharma-2602/"
-        # - name: peerlist
-        #   url: "https://peerlist.io/akshat2602"
-        - name: stackoverflow
-          url: "https://stackoverflow.com/users/16431252/akshat-sharma"
+        - name: goodreads
+          url: "https://www.goodreads.com/user/show/54753277-akshat"
+        - name: letterboxd
+          url: "https://letterboxd.com/akshat2602/"
         - name: "Cal.com"
           url: "https://cal.com/akshat2602"
+        - name: peerlist
+          url: "https://peerlist.io/akshat2602"
+        - name: stackoverflow
+          url: "https://stackoverflow.com/users/16431252/akshat-sharma"
         - name: email
           url: "mailto: mail@akshatsharma.xyz"
         - name: rss

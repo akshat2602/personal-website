@@ -1,0 +1,92 @@
+//  Inspired by https://danilafe.com/blog/sidenotes/ and https://github.com/brickfrog/hugo-PaperModulo 
+
+$sidenote-width: 12rem;
+$maximum-width: 1150px;
+$sidenote-offset: 1rem;
+
+.sidenote:hover .sidenote-label {
+    background-color: var(--link-hover-color);
+    color: #fff;
+}
+
+.sidenote:hover .sidenote-content {
+    border-width: 0.2rem;
+    border-style: ridge hidden groove hidden;
+    padding: 0.5rem;
+    border-color: var(--link-hover-color);
+}
+
+.sidenote-label {
+    border-bottom: 0.15rem dashed var(--link-hover-color);
+}
+
+.sidenote-checkbox {
+    display: none;
+}
+
+.sidenote-content {
+    line-height: 1.3;
+    display: block;
+    position: absolute;
+    width: $sidenote-width;
+    box-sizing: border-box;
+    border-width: 0.075rem;
+    border-style: dashed hidden dashed hidden;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.sidenote-content.sidenote-right {
+    right: 0;
+    margin-right: -($sidenote-width + $sidenote-offset);
+}
+
+@media screen and (max-width: $maximum-width) {
+    .sidenote-content.sidenote-right {
+        display: none;
+    }
+}
+
+.sidenote-content.sidenote-left {
+    left: 0;
+    margin-left: -($sidenote-width + $sidenote-offset);
+}
+
+@media screen and (max-width: $maximum-width) {
+    .sidenote-content.sidenote-left {
+        display: none;
+    }
+}
+
+.sidenote-delimiter {
+    display: none;
+}
+
+@media screen and (max-width: $maximum-width) {
+    .sidenote-content.sidenote-left {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .sidenote-checkbox:checked~.sidenote-content.sidenote-left {
+        display: block;
+    }
+}
+
+@media screen and (max-width: $maximum-width) {
+    .sidenote-content.sidenote-right {
+        position: static;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .sidenote-checkbox:checked~.sidenote-content.sidenote-right {
+        display: block;
+    }
+}
