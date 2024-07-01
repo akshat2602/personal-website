@@ -159,6 +159,9 @@ languages:
                 - name: search
                   url: /search/
                   weight: 10
+                - name: wakatime
+                  url: /wakatime/
+                  weight: 12
                 - name: "resume"
                   url: "https://resume.akshatsharma.xyz/"
                   params:
