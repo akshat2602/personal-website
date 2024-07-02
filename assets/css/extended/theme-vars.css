@@ -1,0 +1,60 @@
+/* Inspired from https://justin.vc */
+
+:root {
+    --gap: 15px;
+    --content-gap: 15px;
+    --nav-width: 800px;
+    --main-width: 800px;
+    --post-width: 800px;
+    --header-height: 42px;
+    --footer-height: 25px;
+    --radius: 8px;
+
+    --theme: rgb(245, 245, 245);
+    --entry: rgb(245, 245, 245);
+    --primary: rgb(30, 30, 30);
+    --primary-opaque: rgb(30, 30, 30, 0.25);
+    --secondary: rgb(59, 59, 59);
+    --tertiary: rgb(158, 158, 158);
+    --tertiary-bg: rgb(230, 230, 228);
+    --content: rgb(31, 31, 31);
+    --code-bg: rgb(235, 235, 230);
+    --border: rgb(238, 238, 238);
+    --header-border: var(--primary);
+    --link-background-color: #e3ecf7;
+    --link-color: var(--primary);
+    --link-hover-color: #495d9b;
+    --link-header-color: #495d9b;
+    --link-underline-shadow: 0 1px 0 var(--link-color);
+    --link-hover-underline-color: var(--link-hover-color);
+    --link-hover-underline-shadow: 0 2px 0 var(--link-hover-underline-color);
+    --link-transition: all 0.3s ease;
+    --line-yellow: url("data:image/svg+xml;charset=utf-8,%3Csvg preserveAspectRatio='none' width='120' height='6' viewBox='0 0 120 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M119 0.8C60 4 50-0.5 1 1.5' stroke='%23fc0' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    --code-shadow: rgba(0, 0, 0, 0.1);
+    --alert-primary: rgb(72, 61, 139);
+    --alert-warning: rgb(220, 20, 60); 
+}
+
+.dark {
+    --theme: rgb(40, 42, 54);
+    --entry: rgb(40, 42, 54);
+    --primary: rgb(218, 218, 219);
+    --primary-opaque: rgba(224, 224, 229, 0.25);
+    --secondary: rgb(182, 183, 184);
+    --tertiary: rgb(123, 124, 124);
+    --tertiary-bg: rgb(38, 36, 50);
+    --content: rgb(255, 255, 255);
+    --code-bg: rgb(28, 27, 36);
+    --border: rgb(51, 51, 51);
+    --header-border: var(--link-hover-color);
+    --link-background-color: #5242746d;
+    --link-color: var(--primary);
+    --link-hover-color: #6272a4;
+    --link-header-color: #F273BD;
+    --link-underline-shadow: 0 1px 0 var(--link-color);
+    --link-hover-underline-color: var(--link-hover-color);
+    --link-hover-underline-shadow: 0 2px 0 var(--link-hover-underline-color);
+    --code-shadow: rgba(0, 0, 0, 0.3);
+    --alert-primary: rgb(100, 149, 237);
+    --alert-warning: rgb(255, 99, 71); 
+}
