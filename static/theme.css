@@ -1,0 +1,129 @@
+/*!
+ * Modified from GitHub's Dark Dimmed theme, licensed under the MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+ main {
+    --color-prettylights-syntax-comment: #6272a4;
+    --color-prettylights-syntax-constant: #bd93f9;
+    --color-prettylights-syntax-entity: #ff79c6;
+    --color-prettylights-syntax-storage-modifier-import: #50fa7b;
+    --color-prettylights-syntax-entity-tag: #8be9fd;
+    --color-prettylights-syntax-keyword: #ff79c6;
+    --color-prettylights-syntax-string: #f1fa8c;
+    --color-prettylights-syntax-variable: #50fa7b;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #ff5555;
+    --color-prettylights-syntax-invalid-illegal-text: #f8f8f2;
+    --color-prettylights-syntax-invalid-illegal-bg: #ff5555;
+    --color-prettylights-syntax-carriage-return-text: #f8f8f2;
+    --color-prettylights-syntax-carriage-return-bg: #ff5555;
+    --color-prettylights-syntax-string-regexp: #ffb86c;
+    --color-prettylights-syntax-markup-list: #bd93f9;
+    --color-prettylights-syntax-markup-heading: #ff79c6;
+    --color-prettylights-syntax-markup-italic: #f8f8f2;
+    --color-prettylights-syntax-markup-bold: #f8f8f2;
+    --color-prettylights-syntax-markup-deleted-text: #ff79c6;
+    --color-prettylights-syntax-markup-deleted-bg: #282a36;
+    --color-prettylights-syntax-markup-inserted-text: #50fa7b;
+    --color-prettylights-syntax-markup-inserted-bg: #282a36;
+    --color-prettylights-syntax-markup-changed-text: #ffb86c;
+    --color-prettylights-syntax-markup-changed-bg: #282a36;
+    --color-prettylights-syntax-markup-ignored-text: #f8f8f2;
+    --color-prettylights-syntax-markup-ignored-bg: #6272a4;
+    --color-prettylights-syntax-meta-diff-range: #bd93f9;
+    --color-prettylights-syntax-brackethighlighter-angle: #6272a4;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #6272a4;
+    --color-prettylights-syntax-constant-other-reference-link: #8be9fd;
+    --color-btn-text: #f8f8f2;
+    --color-btn-bg: #44475a;
+    --color-btn-border: #6272a4;
+    --color-btn-shadow: 0 0 #0000;
+    --color-btn-inset-shadow: 0 0 #0000;
+    --color-btn-hover-bg: #5d5f77;
+    --color-btn-hover-border: #6272a4;
+    --color-btn-active-bg: #383a59;
+    --color-btn-active-border: #6272a4;
+    --color-btn-selected-bg: #282a36;
+    --color-btn-primary-text: #f8f8f2;
+    --color-btn-primary-bg: #50fa7b;
+    --color-btn-primary-border: #50fa7b;
+    --color-btn-primary-shadow: 0 0 #0000;
+    --color-btn-primary-inset-shadow: 0 0 #0000;
+    --color-btn-primary-hover-bg: #45e776;
+    --color-btn-primary-hover-border: #50fa7b;
+    --color-btn-primary-selected-bg: #50fa7b;
+    --color-btn-primary-selected-shadow: 0 0 #0000;
+    --color-btn-primary-disabled-text: #f8f8f280;
+    --color-btn-primary-disabled-bg: #50fa7b99;
+    --color-btn-primary-disabled-border: #50fa7b;
+    --color-action-list-item-default-hover-bg: #44475a;
+    --color-segmented-control-bg: #6272a4;
+    --color-segmented-control-button-bg: #282a36;
+    --color-segmented-control-button-selected-border: #6272a4;
+    --color-fg-default: #f8f8f2;
+    --color-fg-muted: #6272a4;
+    --color-fg-subtle: #44475a;
+    --color-canvas-default: #282a36;
+    --color-canvas-overlay: #21222c;
+    --color-canvas-inset: #21222c;
+    --color-canvas-subtle: #373844;
+    --color-border-default: #6272a4;
+    --color-border-muted: #44475a;
+    --color-neutral-muted: #6272a466;
+    --color-accent-fg: #bd93f9;
+    --color-accent-emphasis: #ff79c6;
+    --color-accent-muted: #bd93f966;
+    --color-accent-subtle: #bd93f91a;
+    --color-success-fg: #50fa7b;
+    --color-attention-fg: #f1fa8c;
+    --color-attention-muted: #f1fa8c66;
+    --color-attention-subtle: #f1fa8c1a;
+    --color-danger-fg: #ff5555;
+    --color-danger-muted: #ff555566;
+    --color-danger-subtle: #ff55551a;
+    --color-primer-shadow-inset: 0 0 #0000;
+    --color-scale-gray-7: #44475a;
+    --color-scale-blue-8: #8be9fd;
+
+    /*! Extensions from @primer/css/alerts/flash.scss */
+    --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+    --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+}
+
+main .pagination-loader-container {
+    background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+}
+
+/*! Custom CSS */
+.gsc-reactions-count {
+    display: none;
+}
+
+.gsc-timeline {
+    flex-direction: column-reverse;
+}
+
+.gsc-header {
+    padding-bottom: 1rem;
+}
+
+.gsc-comments > .gsc-header {
+    order: 1;
+}
+
+.gsc-comments > .gsc-comment-box {
+    margin-bottom: 1rem;
+    order: 2;
+}
+
+.gsc-comments > .gsc-timeline {
+    order: 3;
+}
+
+.gsc-homepage-bg {
+    background-color: #15202b;
+}
+
+main .gsc-loading-image {
+    background-image: url(https://github.githubassets.com/images/mona-loading-dimmed.gif);
+}
