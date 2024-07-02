@@ -75,9 +75,9 @@ params:
     homeInfoParams:
         Title: "a student and an engineer"
         Content: |
-            hi 👋, my name is Akshat Sharma, I'm currently a CS grad student at Stony Brook University working under [Prof. Erez Zadok](https://www3.cs.stonybrook.edu/~ezk/) in the [File Systems and Storage Lab(FSL)](https://www.fsl.cs.stonybrook.edu/). 
+            hi 👋, my name is Akshat Sharma, I'm currently a CS grad student working in the [File Systems and Storage Lab(FSL)](https://www.fsl.cs.stonybrook.edu/) at Stony Brook University. 
 
-            I'm currently researching secure archival storage systems and their applications. I'm interested in all things systems and have worked in Distributed Systems before working in FSL. 
+            I'm currently researching secure archival storage systems and their applications. I'm interested in learning about databases, operation systems, distributed systems and have worked in distributed systems at [Stony Systems Lab](http://mpaxos.com) before working in FSL. 
 
             Here, I post things that I find interesting/notes that I want to share with the world.
     socialIcons:
