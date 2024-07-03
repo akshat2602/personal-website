@@ -1,5 +1,5 @@
 ---
-title: 9) MongoDB Replication
+title: MongoDB Replication
 date: 02 Oct 2023
 tags: [subject/distributed-system, distributed-storage]
 ---

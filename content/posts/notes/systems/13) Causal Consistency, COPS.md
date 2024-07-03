@@ -1,5 +1,5 @@
 ---
-title: 13) Causal Consistency
+title: Causal Consistency
 date: 23 Oct 2023
 tags: [subject/distributed-system, distributed-storage, consistency]
 ---

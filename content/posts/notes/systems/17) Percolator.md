@@ -1,5 +1,5 @@
 ---
-title: 17) Percolator
+title: Percolator
 date: 06 Nov 2023
 tags: [subject/distributed-system, distributed-computing]
 ---

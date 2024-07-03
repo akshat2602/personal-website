@@ -1,5 +1,5 @@
 ---
-title: 4) RPC, Couroutines
+title: RPC, Couroutines
 date: 11 Sep 2023
 tags: [subject/distributed-system]
 ---

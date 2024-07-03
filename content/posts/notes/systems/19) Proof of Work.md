@@ -1,5 +1,5 @@
 ---
-title: 19) Proof of Work
+title: Proof of Work
 date: 13 Nov 2023
 tags: [subject/distributed-system]
 ---

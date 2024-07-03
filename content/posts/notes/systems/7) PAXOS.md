@@ -1,5 +1,5 @@
 ---
-title: 7) PAXOS
+title: PAXOS
 date: 20 Sep 2023
 tags: [subject/distributed-system, consensus]
 ---

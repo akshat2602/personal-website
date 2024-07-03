@@ -1,5 +1,5 @@
 ---
-title: 20) Permissioned Chains
+title: Permissioned Chains
 date: 15 Nov 2023
 tags: [subject/distributed-system]
 ---

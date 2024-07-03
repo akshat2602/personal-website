@@ -1,5 +1,5 @@
 ---
-title: 2) MapReduce
+title: MapReduce
 date: 30 Aug 2023
 tags: [subject/distributed-system, distributed-computing]
 ---

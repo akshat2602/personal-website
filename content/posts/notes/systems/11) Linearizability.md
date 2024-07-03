@@ -1,5 +1,5 @@
 ---
-title: 11) Linearizability
+title: Linearizability
 date: 16 Oct 2023
 tags: [subject/distributed-system, consistency]
 ---

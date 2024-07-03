@@ -1,5 +1,5 @@
 ---
-title: 18) Critique of ANSI SQL Isolation Levels
+title: Critique of ANSI SQL Isolation Levels
 date: 08 Nov 2023
 tags: [subject/distributed-system, distributed-storage]
 ---
