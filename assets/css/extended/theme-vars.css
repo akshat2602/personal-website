@@ -42,10 +42,10 @@
     --primary-opaque: rgba(224, 224, 229, 0.25);
     --secondary: rgb(182, 183, 184);
     --tertiary: rgb(123, 124, 124);
-    --tertiary-bg: rgb(38, 36, 50);
+    --tertiary-bg: var(--link-hover-color);
     --content: rgb(255, 255, 255);
     --code-bg: rgb(28, 27, 36);
-    --border: rgb(51, 51, 51);
+    --border: var(--link-hover-color);
     --header-border: var(--link-hover-color);
     --link-background-color: #5242746d;
     --link-color: var(--primary);

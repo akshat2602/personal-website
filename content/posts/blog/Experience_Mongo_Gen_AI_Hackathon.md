@@ -88,4 +88,4 @@ Great blog on storing and search embeddings using Nomic and MongoDB: https://blo
 
 ---
 
-P.S. If you're looking to hire, I have experience in building RAGs, working in systems, building all sorts of random things. You can have a look at my [resume](https://resume.akshatsharma.xyz) or contact me using [LinkedIn](https://linkedin.com/in/akshat-sharma-2602), [Email](mailto:akshatsharma2602@gmail.com) or [Twitter/X](https://x.com/akshat2602) and checkout my [GitHub](https://github.com/akshat2602)
+P.S. If you're looking to hire, I have experience in building RAGs, working in systems, building all sorts of random things. You can have a look at my [resume](https://resume.akshatsharma.xyz) or contact me using [LinkedIn](https://linkedin.com/in/akshat-sharma-2602), [Email](mailto:mail@akshatsharma.xyz) or [Twitter/X](https://x.com/akshat2602) and checkout my [GitHub](https://github.com/akshat2602)

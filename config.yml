@@ -73,7 +73,7 @@ params:
               url: "https://resume.akshatsharma.xyz/"
 
     homeInfoParams:
-        Title: "a student and an engineer"
+        Title: _a student and an engineer_
         Content: |
             hi 👋, my name is Akshat Sharma, I'm currently a CS grad student working in the [File Systems and Storage Lab(FSL)](https://www.fsl.cs.stonybrook.edu/) at Stony Brook University. 
 
@@ -141,9 +141,12 @@ languages:
         weight: 1
         menu:
             main:
+                - name: About Me
+                  url: /about/
+                  weight: 1
                 - name: posts
                   url: /posts
-                  weight: 1
+                  weight: 4
                 # - name: newsletter
                 #   url: /newsletter/
                 #   weight: 1
@@ -159,9 +162,6 @@ languages:
                 - name: search
                   url: /search/
                   weight: 10
-                - name: wakatime
-                  url: /wakatime/
-                  weight: 12
                 - name: "resume"
                   url: "https://resume.akshatsharma.xyz/"
                   params:
