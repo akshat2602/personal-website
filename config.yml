@@ -141,7 +141,7 @@ languages:
         weight: 1
         menu:
             main:
-                - name: About Me
+                - name: about
                   url: /about/
                   weight: 1
                 - name: posts

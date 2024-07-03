@@ -1,8 +1,8 @@
 ---
 title: "About Me"
-layout: "about me"
+layout: "about"
 ---
 
-Work In Progress.
+## Work In Progress.
 
-By that time checkout my [Wakatime]({{< ref "wakatime" >}})
+You can checkout my [Wakatime]({{< ref "wakatime" >}}) for the time being.
