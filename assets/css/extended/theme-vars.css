@@ -3,11 +3,11 @@
 :root {
     --gap: 15px;
     --content-gap: 15px;
-    --nav-width: 800px;
-    --main-width: 800px;
-    --post-width: 800px;
-    --header-height: 42px;
-    --footer-height: 25px;
+    --nav-width: 1000px;
+    --main-width: 1000px;
+    --post-width: 1000px;
+    /* --header-height: 42px; */
+    /* --footer-height: 25px; */
     --radius: 8px;
 
     --theme: rgb(245, 245, 245);
