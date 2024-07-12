@@ -1,11 +1,11 @@
 /* Inspired from https://justin.vc */
 
 :root {
-    --gap: 15px;
-    --content-gap: 15px;
-    --nav-width: 1000px;
-    --main-width: 1000px;
-    --post-width: 1000px;
+/*     --gap: 15px; */
+/*     --content-gap: 15px; */
+    --nav-width: 850px;
+    --main-width: 850px;
+    --post-width: 850px;
     /* --header-height: 42px; */
     /* --footer-height: 25px; */
     --radius: 8px;
