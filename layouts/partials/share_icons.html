@@ -19,7 +19,7 @@
         href="https://twitter.com/intent/tweet/?text={{ $title }}&amp;url={{ $pageurl }}&amp;hashtags={{- $.Scratch.Get "tags" -}}">
         <div class="social-icons">
             <a href="https://twitter.com/intent/tweet/?text={{ $title }}&amp;url={{ $pageurl }}&amp;hashtags={{- $.Scratch.Get "tags" -}}" title="Twitter">
-                {{ safeHTML (index $.svg "twitter" | default $.svg.default) }}
+                {{ safeHTML (index $.svg "twitter-x" | default $.svg.default) }}
             </a>
         </div>
     </a>
@@ -80,3 +80,4 @@
     </a>
     {{- end }}
 </div>
+<!-- javascript:window.location=%22https://news.ycombinator.com/submitlink?u=%22+encodeURIComponent(document.location)+%22&t=%22+encodeURIComponent(document.title) -->
