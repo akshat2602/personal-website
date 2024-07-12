@@ -28,7 +28,9 @@ params:
 
     defaultTheme: "dark"
     disableThemeToggle: true
-    ShowShareButtons: ["twitter", "hackernews"]
+    ShowShareButtons: 
+        - twitter: true
+        - hackernews: true
     ShowReadingTime: false
     ShowWordCount: true
     # disableSpecial1stPost: true
