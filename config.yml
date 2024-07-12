@@ -85,6 +85,8 @@ params:
           url: "https://github.com/akshat2602"
         - name: linkedin
           url: "https://linkedin.com/in/akshat-sharma-2602/"
+        - name: hackernews
+          url: https://news.ycombinator.com/user?id=akshat2602
         - name: goodreads
           url: "https://www.goodreads.com/user/show/54753277-akshat"
         - name: letterboxd
