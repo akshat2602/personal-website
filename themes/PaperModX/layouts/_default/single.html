@@ -52,9 +52,11 @@
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
-    {{- if (.Param "ShowShareButtons") }}
-    {{- partial "share_icons.html" . }}
+    
+    {{- if or (eq .Params.ShowShareButtons true) (gt (len .Params.ShowShareButtons) 0) }}
+      {{- partial "share_icons.html" . }}
     {{- end }}
+
 
     {{- if $isNewsletter }}
       <div class="newsletter-sub">
