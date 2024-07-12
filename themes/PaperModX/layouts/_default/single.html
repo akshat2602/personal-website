@@ -52,6 +52,9 @@
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
+    {{- if (.Param "ShowShareButtons") }}
+    {{- partial "share_icons.html" . }}
+    {{-  }}
 
     {{- if $isNewsletter }}
       <div class="newsletter-sub">
