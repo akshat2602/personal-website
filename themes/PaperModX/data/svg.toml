@@ -633,17 +633,16 @@ xing = '''
 </svg>
 '''
 hackernews = '''
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
-<g transform="matrix(1 0 0 1 540 540)" id="50735d52-0834-4f5b-a0f1-dd3c1056477f"  >
-<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
-</g>
-<g transform="matrix(1 0 0 1 540 540)" id="6f05f7c5-8921-4df3-832f-3d2face685ab"  >
-</g>
-<g transform="matrix(1 0 0 1 540 540)" id="cfc2b072-942c-4737-a060-3b08819d566d"  >
-<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-12, -12)" d="M 0 24 L 0 0 L 24 0 L 24 24 L 0 24 z M 6.951 5.896 L 11.062999999999999 13.604 L 11.062999999999999 18.668 L 12.645999999999999 18.668 L 12.645999999999999 13.695999999999998 L 16.793999999999997 5.896999999999998 L 15.044999999999996 5.896999999999998 L 12.587999999999997 10.771999999999998 C 12.215999999999998 11.516999999999998 11.899999999999997 12.205999999999998 11.899999999999997 12.205999999999998 C 11.899999999999997 12.205999999999998 11.602999999999996 11.497999999999998 11.248999999999997 10.771999999999998 L 8.831 5.896 L 6.951 5.896 z" stroke-linecap="round" />
-</g>
-</svg>'''
+<svg 
+  role="img" 
+  viewBox="0 0 24 24" 
+  xmlns="http://www.w3.org/2000/svg">
+    <title>Y Combinator</title>
+    <path 
+      fill="white"
+      d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/>
+</svg>
+'''
 youtube = '''
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
