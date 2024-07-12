@@ -52,26 +52,10 @@
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
-    
-    {{- if .Params.ShowShareButtons }}
-      {{- $showShare := false }}
-      {{- range .Params.ShowShareButtons }}
-        {{- if . }}
-          {{- range $key, $value := . }}
-            {{- if eq $value true }}
-              {{- $showShare = true }}
-            {{- end }}
-          {{- end }}
-        {{- end }}
-      {{- end }}
-    
-      {{- if $showShare }}
-        {{- partial "share_icons.html" . }}
-      {{- end }}
+
+    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- partial "share_icons.html" . -}}
     {{- end }}
-
-
-
 
     {{- if $isNewsletter }}
       <div class="newsletter-sub">
