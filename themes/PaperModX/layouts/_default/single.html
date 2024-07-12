@@ -53,9 +53,10 @@
     {{- partial "post_nav_links.html" . }}
     {{- end }}
     
-    {{- if or (eq .Params.ShowShareButtons true) (and (slice .Params.ShowShareButtons) (gt (len .Params.ShowShareButtons) 0)) }}
+    {{- if or (eq .Params.ShowShareButtons true) (and (isset .Params "ShowShareButtons") (gt (len .Params.ShowShareButtons) 0)) }}
       {{- partial "share_icons.html" . }}
     {{- end }}
+
 
 
 
