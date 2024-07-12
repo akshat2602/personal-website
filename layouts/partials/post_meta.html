@@ -1,0 +1,56 @@
+{{- if not .Date.IsZero -}}
+<span class="meta-item">
+  <span>Date: {{ .Date | time.Format (default "January 2, 2006" site.Params.DateFormat) }}</span>
+</span>
+{{- end }}
+
+{{- if .Params.tags -}}
+<span class="meta-item">
+  <span>Tags:
+    <span class="post-tags">
+      {{- range ($.GetTerms "tags") -}}
+      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+      {{- end -}}
+    </span>
+  </span>
+</span>
+{{- end }}
+
+{{- if and (.Param "ShowWordCount") (gt .WordCount 0) -}}
+<span class="meta-item">
+  <span>Word Count: {{- i18n "words" .WordCount | default (printf "%d words" .WordCount) -}}</span>
+</span>
+{{- end }}
+
+{{- if and (.Param "ShowReadingTime") (gt .ReadingTime 0) -}}
+<span class="meta-item">
+  <span>Reading Time: {{- i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) -}}</span>
+</span>
+{{- end }}
+
+{{- if (.Param "ShowAuthor") -}}
+<span class="meta-item">
+  <span>Author: {{- partial "author.html" . -}}</span>
+</span>
+{{- end }}
+
+{{- if .IsTranslated -}}
+<span class="meta-item">
+  <span>Translations:
+    <span class="i18n-links">
+      {{- range $i, $e := .Translations }}
+      {{- if $i }}&nbsp;|&nbsp;{{ end -}}
+      {{- with $e }}
+      <a href="{{ .Permalink }}">
+        {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
+        {{- .Language.LanguageName | emojify -}}
+        {{- else }}
+        {{- .Lang | title -}}
+        {{- end -}}
+      </a>
+      {{- end }}
+      {{- end }}
+    </span>
+  </span>
+</span>
+{{- end }}
