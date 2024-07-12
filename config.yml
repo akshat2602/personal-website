@@ -21,7 +21,7 @@ params:
         - notes
     disableAnchoredHeadings: true
     images: ["index.png"]
-    DateFormat: "2 January, 2006"
+    DateFormat: "2006-01-02"
     useCustomAnalytics: false
     favicon: "https://i.imgur.com/yn0lf5g.png"
     apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
@@ -29,7 +29,7 @@ params:
     defaultTheme: "dark"
     disableThemeToggle: true
     ShowShareButtons: true
-    ShowReadingTime: true
+    ShowReadingTime: false
     ShowWordCount: true
     # disableSpecial1stPost: true
     displayFullLangName: true
