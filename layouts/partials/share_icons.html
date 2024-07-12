@@ -20,7 +20,7 @@
         href="https://twitter.com/intent/tweet/?text={{ $title }}&amp;url={{ $pageurl }}&amp;hashtags={{- $.Scratch.Get "tags" -}}">
         <div class="social-icons">
             <a href="https://twitter.com/intent/tweet/?text={{ $title }}&amp;url={{ $pageurl }}&amp;hashtags={{- $.Scratch.Get "tags" -}}" title="Twitter">
-                {{ safeHTML (index $icons "twitter-x" | default $.svg.default) }}
+                {{ safeHTML (index $icons "twitter-x" | default $icons.default) }}
             </a>
         </div>
     </a>
@@ -31,7 +31,7 @@
         href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageurl }}&amp;title={{ $title }}&amp;summary={{ $title }}&amp;source={{ $pageurl }}">
         <div class="social-icons">
             <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageurl }}&amp;title={{ $title }}&amp;summary={{ $title }}&amp;source={{ $pageurl }}" title="LinkedIn">
-                {{ safeHTML (index $icons "linkedin" | default $.svg.default) }}
+                {{ safeHTML (index $icons "linkedin" | default $icons.default) }}
             </a>
         </div>
     </a>
@@ -42,7 +42,7 @@
         href="https://reddit.com/submit?url={{ $pageurl }}&title={{ $title }}">
         <div class="social-icons">
             <a href="https://reddit.com/submit?url={{ $pageurl }}&title={{ $title }}" title="Reddit">
-                {{ safeHTML (index $icons "reddit" | default $.svg.default) }}
+                {{ safeHTML (index $icons "reddit" | default $icons.default) }}
             </a>
         </div>
     </a>
@@ -53,7 +53,7 @@
         href="https://facebook.com/sharer/sharer.php?u={{ $pageurl }}">
         <div class="social-icons">
             <a href="https://facebook.com/sharer/sharer.php?u={{ $pageurl }}" title="Facebook">
-                {{ safeHTML (index $icons "facebook" | default $.svg.default) }}
+                {{ safeHTML (index $icons "facebook" | default $icons.default) }}
             </a>
         </div>
     </a>
@@ -64,7 +64,7 @@
         href="https://api.whatsapp.com/send?text={{ $title }}%20-%20{{ $pageurl }}">
         <div class="social-icons">
             <a href="https://api.whatsapp.com/send?text={{ $title }}%20-%20{{ $pageurl }}" title="WhatsApp">
-                {{ safeHTML (index $icons "whatsapp" | default $.svg.default) }}
+                {{ safeHTML (index $icons "whatsapp" | default $icons.default) }}
             </a>
         </div>
     </a>
@@ -75,7 +75,7 @@
         href="https://telegram.me/share/url?text={{ $title }}&amp;url={{ $pageurl }}">
         <div class="social-icons">
             <a href="https://telegram.me/share/url?text={{ $title }}&amp;url={{ $pageurl }}" title="Telegram">
-                {{ safeHTML (index $icons "telegram" | default $.svg.default) }}
+                {{ safeHTML (index $icons "telegram" | default $icons.default) }}
             </a>
         </div>
     </a>
