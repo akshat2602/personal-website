@@ -426,7 +426,6 @@ h6:hover .anchor {
 .share-buttons a svg {
     height: 30px;
     width: 30px;
-    fill: currentColor;
     transition: transform 0.1s;
 }
 
