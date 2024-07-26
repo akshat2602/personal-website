@@ -5,4 +5,4 @@ layout: "about"
 
 ## Work In Progress.
 
-You can checkout my [Wakatime]({{< ref "wakatime" >}}) for the time being.
+<!-- You can checkout my [Wakatime]({{< ref "wakatime" >}}) for the time being. -->
