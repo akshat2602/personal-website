@@ -4,7 +4,6 @@ description: "A post detailing my experience at the MongoDB Gen AI Hackathon and
 date: 2024-04-14
 draft: false
 tags: [hackathon, genAI, development, embeddings, mongoDB]
-weight: 100
 ---
 
 
