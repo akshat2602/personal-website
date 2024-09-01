@@ -23,8 +23,8 @@ params:
     images: ["index.png"]
     DateFormat: "2006-01-02"
     useCustomAnalytics: false
-    favicon: "https://i.imgur.com/yn0lf5g.png"
-    apple-touch-icon: "https://i.imgur.com/yn0lf5g.png"
+    favicon: "/favicon.ico"
+    apple-touch-icon: "/favicon.ico"
 
     defaultTheme: "dark"
     disableThemeToggle: true
