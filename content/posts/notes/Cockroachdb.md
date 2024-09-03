@@ -1,8 +1,8 @@
 ---
 title: CockroachDB, The Resilient Geo-Distributed SQL Database
-tags: [subject/distributed-system, distributed-storage, database]
+tags: [subject/distributed-system, distributed-storage, database, paper-summary]
 date: 03 Aug 2024
-description: These are my personal notes on the CockroachDB paper that was presented in SIGMOD 2020.
+description: Personal notes on the CockroachDB paper that was presented in SIGMOD 2020.
 ---
 
 These are my personal notes on [CockroachDB paper](https://dl.acm.org/doi/10.1145/3318464.3386134)
