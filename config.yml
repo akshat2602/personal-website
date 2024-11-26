@@ -1,6 +1,6 @@
 baseURL: "https://akshatsharma.xyz"
 title: Akshat Sharma
-paginate: 5
+paginate: 3
 theme: PaperModX
 
 enableInlineShortcodes: true
@@ -53,10 +53,11 @@ params:
         #     channel: reorx_share
         #     accentColor: "9077e1"
         #     limit: 20
-        giscus: 
-          shortname: akshat2602
+        # giscus: 
+        #   shortname: akshat2602
+        bluesky: true
     defaultCommentSystems:
-        giscus: true
+        bluesky: true
 
     profileMode:
         enabled: false

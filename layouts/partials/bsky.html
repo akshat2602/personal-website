@@ -1,0 +1,7 @@
+{{- if (eq (.Site.Params.disableComments | default false) false) -}}
+{{- if (eq (.Params.disableComments | default false) false) -}}
+<div id="comments-section" data-bsky-uri="{{ .bskyUri }}"></div>
+{{ $comments := resources.Get "js/bsky-comments.js" }}
+<script src="{{ $comments.RelPermalink }}"></script>
+{{- end -}}
+{{- end -}}

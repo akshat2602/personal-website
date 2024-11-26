@@ -30,4 +30,8 @@
     {{- partial "giscus.html" (dict "page" $page "ctx" .) }}
   {{- end -}}
   {{- end -}}
+
+  {{- if $pageCommentSystems.bluesky -}}
+    {{- partial "bsky.html" (dict "page" $page "bskyUri" $page.Params.bsky) }}
+  {{- end -}}
 {{- end -}}
