@@ -82,8 +82,12 @@
   {{- end -}}
 {{- end -}}
 
-{{- template "partials/opengraph.html" (dict "page" . "pageTitle" $pageTitle) }}
+{{- $ogTitle := "" }}
+{{- if (and .Title (not .IsHome)) }}
+  {{- $ogTitle = printf "%s %s" .Title $ogTitle }}
+{{- end }}
 
+{{- template "partials/opengraph.html" (dict "page" . "ogTitle" $ogTitle "RelPermalink" .Page.RelPermalink ) }}
 {{- template "partials/templates/schema_json.html" (dict "page" . "pageTitle" $pageTitle) }}
 
 {{- partial "extend_head.html" . }}
