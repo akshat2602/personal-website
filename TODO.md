@@ -1,3 +1,6 @@
 - [ ] Share to bsky on blog.
 - [ ] Reorganize stuff by having more things like blog/notes instead of one posts and then divided into blogs and notes. Remove about me?
 - [ ] Add bsky post links to some posts so that comments show up.
+- [ ] Reorganize css to be more minimal? 
+    - [ ] Remove cards and description and dates and tags from main page?
+    - [ ] Remove TOC or keep it closed by default?
