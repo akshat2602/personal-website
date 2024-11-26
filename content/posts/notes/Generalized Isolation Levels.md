@@ -3,6 +3,7 @@ title: Generalized Isolation Level Definitions
 tags: [subject/distributed-system, database, isolation, paper-summary]
 date: 03 Sep 2024
 description: Personal notes on the Generalized Isolation Level Definitions paper that was published in 2000.
+bsky: "https://bsky.app/profile/akshatsharma.xyz/post/3lbuwd3hldk2u"
 ---
 
 Personal notes on [Generalized Isolation Level Definitions](https://pmg.csail.mit.edu/papers/icde00.pdf)

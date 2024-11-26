@@ -4,6 +4,7 @@ description: "A post detailing my experience at the MongoDB Gen AI Hackathon and
 date: 2024-04-14
 draft: false
 tags: [hackathon, genAI, development, embeddings, mongoDB]
+bsky: "https://bsky.app/profile/akshatsharma.xyz/post/3lbuwdu23ck2u"
 ---
 
 
