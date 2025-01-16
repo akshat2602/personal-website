@@ -3,9 +3,11 @@ export async function onRequestGet(ctx) {
         // Parse the original URL and extract the pathname
         const originalUrl = new URL(ctx.request.url);
         const pathname = originalUrl.pathname;
+        console.log(`URL path: ${pathname}`);
 
         const objectKey = pathname.startsWith("/") ? pathname.slice(1) : pathname;
 
+        console.log(`Fetching object with key: ${objectKey}`);
         const object = await ctx.env.MEDIA.get(objectKey);
         if (!object) {
             return new Response("File not found in R2.", { status: 404 });
@@ -15,7 +17,7 @@ export async function onRequestGet(ctx) {
         return new Response(object.body, {
             headers: {
                 "Content-Type": object.httpMetadata?.contentType || "application/octet-stream",
-                "Cache-Control": "public, max-age=3600", // Optional: Add caching headers for performance
+                "Cache-Control": "public, max-age=31536000, immutable", // Cache for a year, suitable for static assets
             },
         });
     } catch (err) {
