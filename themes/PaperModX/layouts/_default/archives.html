@@ -10,10 +10,11 @@
 </header>
 
 {{/* get pages from the current page's section */}}
-{{/* in this way, archives.html could be used for section archives other than the only one archives of the whole site */}}
+{{/* in this way, archives.html could be used for section archives other than the only one archives of the whole site
+*/}}
 {{- $sections := site.Params.mainSections }}
 {{- if .Section }}
-  {{- $sections = slice .Section }}
+{{- $sections = slice .Section }}
 {{- end }}
 {{- $pages := where (where site.RegularPages "Section" "in" $sections) "Params.hidden" "!=" true }}
 
@@ -33,6 +34,12 @@
           {{- .Title | markdownify }}
           {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
         </h3>
+        <section class="archive-entry-content">
+          {{ if .Description }}
+          <p>{{ .Description | plainify | htmlUnescape }}</p>
+          {{ end }}
+        </section>
+
         <div class="archive-meta">
           {{- partial "post_meta.html" . -}}
         </div>

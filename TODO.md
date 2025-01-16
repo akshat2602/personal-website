@@ -1,7 +1,7 @@
 - [x] Share to bsky on blog.
 - [x] serve images using cloudflare r2 instead of directly using cloudflare pages
-- [ ] Reorganize stuff by having more things like blog/notes instead of one posts and then divided into blogs and notes. Remove about me?
+- [x] Reorganize stuff by having more things like blog/notes instead of one posts and then divided into blogs and notes. Remove about me? Note: used cloudflare URL rewrite to set this up.
 - [x] Add bsky post links to some posts so that comments show up.
 - [ ] Reorganize css to be more minimal? 
     - [ ] Remove cards and description and dates and tags from main page?
-    - [ ] Remove TOC or keep it closed by default?
+    - [x] Remove TOC or keep it closed by default?
