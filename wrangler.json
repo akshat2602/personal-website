@@ -1,0 +1,8 @@
+{
+    "r2_buckets": [
+        {
+            "binding": "MEDIA",
+            "bucket_name": "personal-website"
+        }
+    ]
+}
