@@ -7,7 +7,7 @@ export async function onRequestGet(ctx) {
     const rewrittenUrl = new URL(pathname, "https://cdn.akshatsharma.xyz");
 
     // Fetch the file from the rewritten URL
-    const file = await ctx.env.MEDIA.get(rewrittenUrl.pathname.replace("/media/", ""));
+    const file = await ctx.env.MEDIA.get(rewrittenUrl);
     if (!file) return new Response(null, { status: 404 });
 
     return new Response(file.body, {
