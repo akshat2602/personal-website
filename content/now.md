@@ -1,6 +1,6 @@
 ---
-title: "About Me"
-layout: "about"
+title: "Now"
+layout: "now"
 ---
 
 ## Work In Progress.

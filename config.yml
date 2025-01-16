@@ -1,6 +1,6 @@
 baseURL: "https://akshatsharma.xyz"
 title: Akshat Sharma
-paginate: 3
+paginate: 5
 theme: PaperModX
 
 enableInlineShortcodes: true
@@ -37,7 +37,7 @@ params:
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
     ShowToc: true
-    TocOpen: true
+    TocOpen: false
     TocSide: "left"
     EnableInstantClick: true
     EnableImageZoom: true
@@ -144,27 +144,21 @@ languages:
         weight: 1
         menu:
             main:
-                - name: about
-                  url: /about/
-                  weight: 1
                 - name: posts
                   url: /posts
-                  weight: 4
-                # - name: newsletter
-                #   url: /newsletter/
-                #   weight: 1
-                # - name: notes
-                #   url: /notes
-                #   weight: 4
+                  weight: 1
                 - name: tags
                   url: /tags
-                  weight: 4
-                - name: archives
-                  url: /archives/
-                  weight: 5
+                  weight: 2
                 - name: search
                   url: /search/
-                  weight: 10
+                  weight: 3
+                - name: now
+                  url: /now
+                  weight: 4
+                # - name: archives
+                #   url: /archives/
+                #   weight: 5
                 - name: "resume"
                   url: "https://resume.akshatsharma.xyz/"
                   params:
