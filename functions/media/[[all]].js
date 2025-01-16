@@ -4,18 +4,22 @@ export async function onRequestGet(ctx) {
         const originalUrl = new URL(ctx.request.url);
         const pathname = originalUrl.pathname;
 
-        const rewrittenUrl = `https://cdn.akshatsharma.xyz${pathname}`;
+        const objectKey = pathname.startsWith("/") ? pathname.slice(1) : pathname;
 
-        // Fetch the file from the MEDIA storage
-        const file = await ctx.env.MEDIA.get(pathname);
-        if (!file) {
-            return new Response("File not found.", { status: 404 });
+        const object = await ctx.env.MEDIA.get(objectKey);
+        if (!object) {
+            return new Response("File not found in R2.", { status: 404 });
         }
 
-        return new Response(file.body, {
-            headers: { "Content-Type": file.httpMetadata?.contentType || "application/octet-stream" },
+        // Prepare the response with the appropriate Content-Type header
+        return new Response(object.body, {
+            headers: {
+                "Content-Type": object.httpMetadata?.contentType || "application/octet-stream",
+                "Cache-Control": "public, max-age=3600", // Optional: Add caching headers for performance
+            },
         });
     } catch (err) {
+        // Handle unexpected errors
         return new Response(`Error: ${err.message}`, { status: 500 });
     }
 }
