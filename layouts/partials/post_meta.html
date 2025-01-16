@@ -4,17 +4,19 @@
 </span>
 {{- end }}
 
-{{- if .Params.tags -}}
-<span class="meta-item">
-  <span><b>Tags:</b>
-    <span class="post-tags">
-      {{- range ($.GetTerms "tags") -}}
-      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-      {{- end -}}
+<span class="meta-tags">
+  {{- if .Params.tags -}}
+  <span class="meta-item">
+    <span><b>Tags:</b>
+      <span class="post-tags">
+        {{- range ($.GetTerms "tags") -}}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{- end -}}
+      </span>
     </span>
   </span>
+  {{- end }}
 </span>
-{{- end }}
 
 {{- if and (.Param "ShowWordCount") (gt .WordCount 0) -}}
 <span class="meta-item">

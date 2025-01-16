@@ -19,6 +19,10 @@
         flex-direction: column;
     }
 
+    /* .archive-entry-content {
+        display: none;
+    } */
+
     .archive-year {
         margin-top: 20px;
     }
@@ -26,6 +30,10 @@
     /* footer */
     .footer {
         padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
+    }
+
+    .meta-tags {
+        display: none;
     }
 }
 
