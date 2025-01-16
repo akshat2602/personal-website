@@ -32,7 +32,7 @@ If we wanna improve performance(and decrease isolation levels), we can <mark sty
 
 Just the exclusion of these 3 anomalies doesn't mean that serializability is achieved.
 We need to define read skew and write skew and
-{{< figure src="/Consistency_Levels.png" title="Overview of consistency levels" >}}
+{{< figure src="/media/images/Consistency_Levels.png" title="Overview of consistency levels" >}}
 
 ---
 

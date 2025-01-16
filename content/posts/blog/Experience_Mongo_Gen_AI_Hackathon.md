@@ -14,13 +14,13 @@ Last week, me and my team, **http418**, won the [MongoDB Gen AI Hackathon](https
 ### TL;DR(presented by ChatGPT): 
 Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30-second highlight clips from videos. Leveraging cutting-edge embeddings and prompt engineering, we automated the creation of engaging content. We used Nomic AI's embeddings model, transcribed video audio for text summaries, and extracted video clip embeddings stored in MongoDB. Stitching together the most relevant clips, we added AI-generated narration for a complete TikTok-ready highlight. Check out our project code on GitHub and explore AWS services for similar functionality.
 
-{{< figure src="/mongo_winning_shot.png" caption="After hours of building, the money shot" align="center">}}
+{{< figure src="/media/images/mongo_winning_shot.png" caption="After hours of building, the money shot" align="center">}}
 
 ---
 ## The problem
 Going in, we knew we wanted to do something video related because let's face it, RAGs(Retrieval Augmented Generations) have already been proven to work pretty well and if you want create a high quality RAG then it becomes all about the quality of data. We wanted to try something different, something new, something video related, something which none of us had tried before. After the breakfast and some very quick talks by the sponsors of the hackathons, we started brainstorming about things we could try out in the video space.
 
-> {{< figure src="/RAG.png" align="center" >}}
+> {{< figure src="/media/images/media/images/RAG.png" align="center" >}}
 
 {{% sidenote "right" "rag-explanation-sidenote" "Retrieval Augmented Generation(RAGs) explained" %}} This image was taken from Pinecone's article about [RAGs](https://www.pinecone.io/learn/retrieval-augmented-generation/) {{% /sidenote %}}
 
@@ -38,7 +38,7 @@ Before we dive into the approach, one very important thing which we used, that I
 #### Embeddings
 Embeddings are basically numerical representations of real-world data in a form which is easier for Neural Nets to understand. Embeddings are created in such a way that similar types of objects are placed near to each other in a latent space. Typically embeddings have been representations of only one form of data(either image, audio or text) but, we wanted a multimodal embedding model because of obvious reasons.
 
-> {{< figure src="/Embeddings.png" align="center" >}} 
+> {{< figure src="/media/images/Embeddings.png" align="center" >}} 
 
 {{% sidenote "right" "embeddings-sidenote" "A visual aid for learning embeddings" %}} The image was taken from Pinecone's article about [embeddings](https://www.pinecone.io/learn/vector-embeddings/) {{% /sidenote %}}
 

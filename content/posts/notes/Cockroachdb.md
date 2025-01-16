@@ -27,14 +27,14 @@ These are my personal notes on [CockroachDB paper](https://dl.acm.org/doi/10.114
 - Geo-distributed partitioning and data placement with automatic and manual data placement strategies.
 - Serializable transactions using commodity hardware using hybrid logical clocks for versioning.
 
-> {{< figure src="/data_placement.jpeg" align="center" >}}
+> {{< figure src="/media/images/data_placement.jpeg" align="center" >}}
 
 ## Architecture Overview
 - Since, data is partitioned and partitions are replicated, it makes sense to have a RAFT group at the level of partitions(or ranges as the paper calls it). 
 - Replication happens at the range level instead of a node level. 
 - Layered architecture as illustrated below. Each layer acts as an abstraction to the one above it. 
 
-> {{< figure src="/crdb_layers.jpeg" align="center" >}}
+> {{< figure src="/media/images/crdb_layers.jpeg" align="center" >}}
 
 Note: Replication is consensus based, specifically RAFT based.
 
@@ -46,16 +46,16 @@ Note: Replication is consensus based, specifically RAFT based.
 - This transaction record also goes through RAFT, serves to atomically change the visibility of all the intents at once, and is durably stored in the same range as the first write of the transaction.
 - All operations in a transaction are provisional until committed(they are accompanied by a pointer to the **transaction record** as metadata).
 
-> {{< figure src="/crdb_transaction_step_1.jpeg" align="center" >}}
+> {{< figure src="/media/images/crdb_transaction_step_1.jpeg" align="center" >}}
 
-> {{< figure src="/crdb_transaction_step_2.jpeg" align="center" >}}
+> {{< figure src="/media/images/crdb_transaction_step_2.jpeg" align="center" >}}
 
 - Above images show an example transaction. 
 - As a final step the Gateway node commits the transaction by updating this transaction record from pending to committed via another round of consensus.
 - This differs from spanner as spanner acquires locks in its first phase and then applies the changes. 
 
 ## Optimized transactions
-> {{< figure src="/write_pipeline_parallel_commit.jpeg" align="center" >}}
+> {{< figure src="/media/images/write_pipeline_parallel_commit.jpeg" align="center" >}}
 
 - This is where the **staged** transaction status is used to indicate that the status of transaction is still unknown but the operations have been pipelined. 
 

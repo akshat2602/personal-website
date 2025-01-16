@@ -92,7 +92,7 @@ In a system that proscribes only G1, it is possible for a transaction to read in
 
 **PL-2.99 disallows G1 and G2-item.**
 
-> {{< figure src="/generalized_isolation_level_definitions.png" align="center" >}}
+> {{< figure src="/media/images/generalized_isolation_level_definitions.png" align="center" >}}
 
 
 It turns out, the phenomenas defined in this paper are the ones that are generally used while defining isolation levels but instead of using the names of the isolation levels(ex - PL1, PL2), databases use the older names to define what level of isolation is supported due to which there's a certain ambuigity that pops up while talking about isolation in popular databases.
