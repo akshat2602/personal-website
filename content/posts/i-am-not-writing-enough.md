@@ -3,7 +3,7 @@ title: "I am not writing enough"
 date: 15 Feb 2025
 tags: [writing]
 draft: false
-bsky: ""
+bsky: "https://bsky.app/profile/akshatsharma.xyz/post/3liaqb7rj5c2u"
 ---
 
 I have recently been seeing a lot of posts talking about how ["You are not writing enough"](https://nofilmschool.com/you-re-not-writing-enough). There's [book clubs reading "Writing for developers"](https://eatonphil.com/2025-writing-for-developers.html), people tweeting everyday about how writing has changed their lives for the better and a surge in this type of content. 
