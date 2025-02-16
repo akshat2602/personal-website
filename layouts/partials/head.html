@@ -83,7 +83,9 @@
 {{- end -}}
 
 {{- $ogTitle := "" }}
-{{- if (and .Title (not .IsHome)) }}
+{{- if .IsHome }}
+  {{- $ogTitle = .Title }}
+{{- else if .Title }}
   {{- $ogTitle = printf "%s %s" .Title $ogTitle }}
 {{- end }}
 
