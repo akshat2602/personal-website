@@ -1,5 +1,5 @@
 {{ with .page }}
-<meta property="og:title" content="{{ $.pageTitle }}" />
+<meta property="og:title" content="{{ $.ogTitle }}" />
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -17,7 +17,7 @@
     "y" 315
   }}
 
-  {{ $text := $.ogTitle }}
+  {{ $text := $.pageTitle }}
   {{ $img := resources.Get "images/og_base.png" }}
 
   {{ if $img }}
@@ -68,7 +68,3 @@
   {{- end -}}
 {{- end -}}
 {{- end -}}
-
-{{- if .IsPage -}}
-
-{{ end }}

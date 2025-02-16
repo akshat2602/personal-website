@@ -87,7 +87,7 @@
   {{- $ogTitle = printf "%s %s" .Title $ogTitle }}
 {{- end }}
 
-{{- template "partials/opengraph.html" (dict "page" . "ogTitle" $ogTitle "RelPermalink" .Page.RelPermalink ) }}
+{{- template "partials/opengraph.html" (dict "page" . "ogTitle" $ogTitle "pageTitle" $pageTitle "RelPermalink" .Page.RelPermalink ) }}
 {{- template "partials/templates/schema_json.html" (dict "page" . "pageTitle" $pageTitle) }}
 
 {{- partial "extend_head.html" . }}
