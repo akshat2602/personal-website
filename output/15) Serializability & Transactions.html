@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>15) Serializability & Transactions | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>15) Serializability & Transactions</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: Serializability
+date: 30 Oct 2023
+tags: [subject/distributed-system]</p>
+<hr />
+<h1 id="important-reading-to-help-understand">Important Reading to help understand:</h1>
+<p>https://jepsen.io/consistency</p>
+<h1 id="notes">Notes</h1>
+<p>A - Atomicity (All or nothing of a transaction)
+C - Consistency (Consistent with the constraints on database tables)
+I - Isolation
+D - Durability (Handling reboots/failures)</p>
+<h2 id="isolation">Isolation</h2>
+<p>3 types of dependencies that can help determine serializability -</p>
+<ol>
+<li>Write - Write Dependency</li>
+<li>Write - Read Dependency</li>
+<li>Read - Write Dependency (Anti dependency)</li>
+</ol>
+<blockquote>
+<p>Anti Dependency:
+An anti-dependency, also known as write-after-read (WAR), occurs when an instruction requires a value that is later updated. In the following example, instruction 2 anti-depends on instruction 3 — the ordering of these instructions cannot be changed, nor can they be executed in parallel (possibly changing the instruction ordering), as this would affect the final value of A.</p>
+<ol>
+<li>B = 3</li>
+<li>A = B + 1</li>
+<li>B = 7</li>
+</ol>
+</blockquote>
+<p>A single operation transaction isn't linearizable because single operation transaction still doesn't guarantee real time ordering which is something that's required for linearizability.</p>
+<h2 id="concurrency">Concurrency</h2>
+<p>How to detect deadlock?</p>
+<ol>
+<li>Lock everything (Doesn't work because unnecessary locks acquired)</li>
+<li>Timeouts (Timeout if a transaction is blocked beyond a certain amount of time, it is assumed that a deadlock has occurred)</li>
+<li>Graph detection (Create a graph of transactions, if it is cyclic then deadlock. Problem is performance)</li>
+<li>Give priorities to transactions (Could be based on TID or some kind of timestamp)<ol>
+<li>Wound wait</li>
+<li>Wait die</li>
+</ol>
+</li>
+</ol>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>19) Proof Of Work | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>19) Proof Of Work</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: Proof of Work
+date: 13 Nov 2023
+tags: [subject/distributed-system]</p>
+<hr />
+<h1 id="notes">Notes</h1>
+<h2 id="bitcoin">Bitcoin</h2>
+<h3 id="reasoning-for-making-bitcoin">Reasoning for making bitcoin</h3>
+<p>1) Anonymous
+2) Decentralized money system
+3) No trust in the government money system</p>
+<blockquote>
+<p>How does this work in a no trust environment?</p>
+<p>Use asymmetric encryption scheme like public/private key pairs.</p>
+</blockquote>
+<h3 id="double-spend-problem">Double spend problem</h3>
+<p>Double spend (make a transaction and then unrecord it and then spend that money again)</p>
+<h4 id="how-do-you-solve-this">How do you solve this?</h4>
+<p>Similar to the <strong>consensus problem</strong> where everyone must agree on transactions.
+We can't use consensus algos like <strong>Paxos</strong> or <strong>RAFT</strong> because its not a closed membership situation(no global view of number of servers.)</p>
+<h4 id="solution">Solution</h4>
+<p>Consensus on the basis of compute(ask a proposer to solve a very hard to compute problems).
+That computation must have some properties-
+1) Hard to compute
+2) Easy to verify
+3) Should be unique(based on the contents of the transaction)
+The math problem is - <strong>HASHING</strong></p>
+<h4 id="how-do-you-make-this-hard-to-compute">How do you make this hard to compute?</h4>
+<p>Make it so that some "n" leading bits should be 0. Time complexity - 2^n</p>
+<h4 id="how-do-you-make-sure-that-these-hashes-arent-precomputed">How do you make sure that these hashes aren't precomputed?</h4>
+<p>Include the hash of the previous block as well so that it needs to be real time.</p>
+<h4 id="how-do-you-decide-the-size-of-n">How do you decide the size of n?</h4>
+<ul>
+<li>Store the timestamp in the blocks</li>
+<li>Look at the last 1000 blocks generated and calculate the difference, average it and see if time taken for a new block generation is low or high, increase the value for n or decrease it.</li>
+</ul>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

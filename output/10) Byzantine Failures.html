@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>10) Byzantine Failures | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>10) Byzantine Failures</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: Byzantine Failures
+date: 04 Oct 2023
+tags: [subject/distributed-system, research/failures]</p>
+<hr />
+<p>Readings - <a href="https://pmg.csail.mit.edu/papers/osdi99.pdf">Practical Byzantine Fault Tolerance.pdf</a> <a href="https://lamport.azurewebsites.net/tla/byzsimple.pdf">Byzantine PAXOS.pdf</a></p>
+<h1 id="notes">Notes</h1>
+<h2 id="what-can-be-potential-byzantine-failures">What can be potential byzantine failures?</h2>
+<ol>
+<li>Wrong replies which cannot be detected</li>
+<li>Halt consensus(same as crash so not really byzantine)</li>
+<li>Internal state mismanagement(same as crash)</li>
+<li>Forgery(Use public/private keys to encrypt data)</li>
+</ol>
+<h2 id="converting-paxos-to-byzantine-paxos">Converting paxos to byzantine paxos</h2>
+<h3 id="strategy-1outvoting">Strategy 1(Outvoting)</h3>
+<ol>
+<li>Increase the number of servers and increase quorum requirement to<ol>
+<li>N = 3f + 1, Q = 2f + 1</li>
+</ol>
+</li>
+<li>Normal paxos wouldn't work where let's say-</li>
+</ol>
+<blockquote>
+<p>Thought process of increasing servers:
+There are 4 servers. S1, S2, S3 are normal servers and S4 is a malicious one.
+Let's say S1 prepares and accepts a value with itself S1, S3 and S4. v1 is decided for number 1.
+S1 goes down and S2 comes up. S2 tries to prepare a new number and receives 1,v1 from S3 but 2,v2 from S4. How do you decide which is the correct value?
+We outvote it meaning we'll have to increase number of good servers.</p>
+</blockquote>
+<p>Increase N to 4f + 1 and Q to 3f + 1 so that there is at least f+1 good servers.
+This isn't ideal though because only f faults can be tolerated in this.</p>
+<h3 id="strategy-2detecting-a-lie">Strategy 2(Detecting a lie)</h3>
+<ol>
+<li>P2b and P1a malicious replies are kind of redundant.</li>
+<li>P1b malicious replies can be detected by asking each reply to attach the previous message signature and then it can be checked.</li>
+<li>P2a can also attach previous message signature and then it can be checked. In case of the very first round of P2a we might also need to let each server talk to each other as there is no previous chain of messages to verify from. So servers talk with each other to get a quorum before replying back to the malicious leader.</li>
+</ol>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

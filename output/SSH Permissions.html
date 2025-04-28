@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ssh Permissions | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>Ssh Permissions</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: SSH Permissions
+tags: [ssh, permissions]
+date: 07 Nov 2023</p>
+<hr />
+<h1 id="how-to-set-correct-ssh-directory-permissions-in-linux">How To Set Correct SSH Directory Permissions in Linux</h1>
+<h3 id="set-correct-ssh-directory-permissions-in-linux">Set Correct SSH Directory Permissions in Linux</h3>
+<p>If you ever encounter errors while trying to SSH into a server, you can set correct ssh directory permissions on the <strong>.ssh</strong> directory using the <strong>chmod</strong> command.</p>
+<pre class="codehilite"><code># chmod u+rwx,go-rwx ~/.ssh
+OR
+# chmod  0700 ~/.ssh
+</code></pre>
+
+<p>If ssh complains of wrong permissions on any of the above files, you can set the correct permissions for any of the files like this:</p>
+<pre class="codehilite"><code># chmod u+rw,go-rwx .ssh/id_rsa
+# chmod u+rw,go-rwx .ssh/id_rsa.pub
+# chmod u+rw,go-rwx .ssh/authorized_keys
+# chmod u+rw,go-rwx .ssh/known_hosts
+# chmod u+rw,go-rwx .ssh/config
+OR
+# chmod 600 .ssh/id_rsa
+# chmod 600 .ssh/id_rsa.pub
+# chmod 600 .ssh/authorized_keys
+# chmod 600 .ssh/known_hosts
+# chmod 600 .ssh/config
+</code></pre>
+
+<p>To remove write permissions for group and others on the home directory, run this command:</p>
+<pre class="codehilite"><code># chmod go-w ~
+OR
+# chmod 755 ~
+</code></pre>
+
+<hr />
+<h1 id="references">References:</h1>
+<p>https://www.tecmint.com/set-ssh-directory-permissions-in-linux/</p>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

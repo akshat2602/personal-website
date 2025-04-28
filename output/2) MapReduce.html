@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2) Mapreduce | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>2) Mapreduce</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: MapReduce
+date: 30 Aug 2023
+tags: [subject/distributed-system, distributed-computing]</p>
+<hr />
+<h1 id="til">TIL:</h1>
+<p><strong>POSIX</strong></p>
+<h2 id="reason-for-mapreducewhy-use-a-distributed-system">Reason for MapReduce(Why use a distributed system?)</h2>
+<ol>
+<li>Lots of data(1 PetaByte), machines had 160 GB storage so can't process in one machine</li>
+<li>I/O speed is very low(performance)</li>
+<li>Fault tolerance(Tolerate machine and disk failures)</li>
+<li>Application programmers don't need to work on systems and making sure their job is running in a distributed fashion</li>
+</ol>
+<h2 id="workflow">Workflow</h2>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Map</th>
+<th>Reduce</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key, value</td>
+<td>K1 <v1, v1\`, v1\`\` ></td>
+<td>K1 R(v1, v1`, ...)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>K2, v2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>K3, v3</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<ol>
+<li>Word Count</li>
+<li>Sort</li>
+<li>Reverse Links(Used for page ranking)<ol>
+<li>Input - key: URL, value: HTML</li>
+<li>Map - (<target1, src1>, <target2, src2>,....)</li>
+<li>Reduce - target1, <src1, src1\`,....></li>
+<li>Result - rank</li>
+</ol>
+</li>
+</ol>
+<h2 id="why-mapreduce-was-developed-as-a-library-and-not-as-a-service">Why MapReduce was developed as a library and not as a service?</h2>
+<p>Because loading a user defined function into a already existing running process was not possible in case of C++. It is easier to compile the code with the library than dynamically loading the UDF(user defined function).</p>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

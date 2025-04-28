@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cockroachdb | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>Cockroachdb</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: CockroachDB, The Resilient Geo-Distributed SQL Database
+tags: [subject/distributed-system, distributed-storage, database, paper-summary]
+date: 03 Aug 2024
+description: Personal notes on the CockroachDB paper that was presented in SIGMOD 2020.
+bsky: "https://bsky.app/profile/akshatsharma.xyz/post/3lbuwdn3vwk2u"</p>
+<hr />
+<p>These are my personal notes on <a href="https://dl.acm.org/doi/10.1145/3318464.3386134">CockroachDB paper</a></p>
+<h2 id="cockroachdb-what-is-it">CockroachDB: What is it?</h2>
+<ul>
+<li>CockroachDB is a scalable geo-distributed SQL DBMS. </li>
+<li>Built using global OLTP workloads in mind with high availability and strong consistency in mind.</li>
+<li>Just like its namesake its supposed to be resilient to disasters(through replication and automatic recovery).</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Data must be horizontally partitioned(sharding) for ex - GDPR compliance.</li>
+<li>"Always on" experience(fault tolerance).</li>
+<li>Low latency support(data must reside near the users).</li>
+<li>Avoid data anomalies by implementing serializable transactions at the SQL level.</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Uses multi-version concurrency control</li>
+<li>Fault tolerance by maintaining at minimum three replicas of every partition. High availability maintained using automatic recovery mechanisms when a node failure is detected.</li>
+<li>Geo-distributed partitioning and data placement with automatic and manual data placement strategies.</li>
+<li>Serializable transactions using commodity hardware using hybrid logical clocks for versioning.</li>
+</ul>
+<blockquote>
+<p>{{&lt; figure src="/media/images/data_placement.jpeg" align="center" &gt;}}</p>
+</blockquote>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<ul>
+<li>Since, data is partitioned and partitions are replicated, it makes sense to have a RAFT group at the level of partitions(or ranges as the paper calls it). </li>
+<li>Replication happens at the range level instead of a node level. </li>
+<li>Layered architecture as illustrated below. Each layer acts as an abstraction to the one above it. </li>
+</ul>
+<blockquote>
+<p>{{&lt; figure src="/media/images/crdb_layers.jpeg" align="center" &gt;}}</p>
+</blockquote>
+<p>Note: Replication is consensus based, specifically RAFT based.</p>
+<h2 id="distributed-transaction">Distributed Transaction</h2>
+<ul>
+<li>Support serializable transactions as a default.</li>
+<li>Transactions can span across shards/ranges. </li>
+<li>An SQL gateway(basically a node) is used as the Transaction coordinator which is assigned according to proximity from the client.</li>
+<li>Each transaction has a <strong>transaction record</strong> which specifies the transaction status - <strong>committed</strong>, <strong>aborted</strong>, <strong>pending</strong>, <strong>staging</strong>.</li>
+<li>This transaction record also goes through RAFT, serves to atomically change the visibility of all the intents at once, and is durably stored in the same range as the first write of the transaction.</li>
+<li>All operations in a transaction are provisional until committed(they are accompanied by a pointer to the <strong>transaction record</strong> as metadata).</li>
+</ul>
+<blockquote>
+<p>{{&lt; figure src="/media/images/crdb_transaction_step_1.jpeg" align="center" &gt;}}</p>
+<p>{{&lt; figure src="/media/images/crdb_transaction_step_2.jpeg" align="center" &gt;}}</p>
+</blockquote>
+<ul>
+<li>Above images show an example transaction. </li>
+<li>As a final step the Gateway node commits the transaction by updating this transaction record from pending to committed via another round of consensus.</li>
+<li>This differs from spanner as spanner acquires locks in its first phase and then applies the changes. </li>
+</ul>
+<h2 id="optimized-transactions">Optimized transactions</h2>
+<blockquote>
+<p>{{&lt; figure src="/media/images/write_pipeline_parallel_commit.jpeg" align="center" &gt;}}</p>
+</blockquote>
+<ul>
+<li>This is where the <strong>staged</strong> transaction status is used to indicate that the status of transaction is still unknown but the operations have been pipelined. </li>
+</ul>
+<h2 id="concurrency-control">Concurrency Control</h2>
+<p>A lot of the text below is just copy pasted from the paper as I don't wanna get something wrong about concurrency(its a heavy and hard to reason about topic as it is).
+- CRDB uses an MVCC system and each transaction performs its operations at its commit timestamp which results in a serializable history.
+- <strong>Write-read conflicts:</strong> A read running into an uncommitted intent with a lower timestamp will wait for the earlier transaction to finalize. A read running into an uncommitted intent with a higher timestamp ignores the intent and does not need to wait.
+- <strong>Read-write conflicts:</strong> A write to a key at timestamp <em>ta</em> cannot be performed if there’s already been a read on the same key at a higher timestamp <em>tb &gt;= ta</em>. CRDB forces the writing transaction to advance its commit timestamp past <em>tb</em>.
+- <strong>Write-write conflicts:</strong> A write running into an uncommitted intent with a lower timestamp will wait for the earlier transaction to finalize (similar to write-read conflicts). If it runs into a committed value at a higher timestamp, it advances its timestamp past it (similar to read-write conflicts). Write-write conflicts may also lead to deadlocks in cases where different transactions have written intents in different orders. 
+- There's a subtle problem introduced when you advance the commit timestamp. To maintain serializability, read timestamp must also be advanced. But, advancing the read timestamp can cause issues as keys could've gotten updated between time <em>tb</em> and <em>ta</em>. 
+- The transaction coordinator must maintain readset and then check or perform a "read refresh" to validate that timestamp can be advanced. 
+- If validation fails then transaction must be retried. 
+- Linearizability is also guaranteed per-key by tracking an uncertainty interval(you can sort of model this to true time's [earliest,latest] where consider current time to be earliest and uncertainty interval to be latest - earliest). In case of CRDB, the uncertainty interval is <em>500ms</em>. 
+- When a transaction encounters a value on a key at a timestamp above its provisional commit timestamp but within its uncertainty interval, it performs an uncertainty restart, moving its provisional commit timestamp above the uncertain value but keeping the upper bound of its uncertainty interval fixed. 
+- This corresponds to treating all values in a transaction’s uncertainty window as past writes. As a result, the operations on each key performed by transactions take place in an order consistent with the real time ordering of those transactions hence linearizabilty.</p>
+<p>There's some more stuff about how they handle clock skew and what guarantees there hybrid logical clocks provide in the paper that's an interesting read. </p>
+<p>One thing the paper mentions is they had trouble implementing snapshot isolation with strong consistency without the use of pessimistic locking which seems somewhat weird to me because from what I understand about snapshot isolation is that you can implement it using Optimistic schemes. There's a <a href="https://dl.acm.org/doi/10.1145/1071610.1071615">paper</a> I was linked to regarding this statement that talks about something similar which I plan on checking out.</p>
+<p>Some interesting learnings from the devs -
+1) RAFT is not as easy as people claim it is. 
+    1) Membership changes
+    2) Too many RPCs because of shard level replication
+2) Initially the database used Postgres wire protocol to make existing clients easily compatible with Crdb but turns out modifications must be made for retry mechanisms and Crdb is exploring introducing Crdb-specific client drivers.</p>
+<p>FYI the related work section of the paper is a gold-mine for database architecture research. </p>
+<h1 id="references">References</h1>
+<p>1) CockroachDB: The Resilient Geo-Distributed SQL Database https://dl.acm.org/doi/10.1145/3318464.3386134
+2) The resilient, geo-distributed database: A SIGMOD Conference Talk https://www.youtube.com/watch?v=ivVFAd9erfo
+3) Cockroach Labs Live: The Architecture of a Geo Distributed Database https://www.youtube.com/watch?v=b3XotjcEmJ0
+4) https://muratbuffalo.blogspot.com/2022/03/cockroachdb-resilient-geo-distributed.html</p>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

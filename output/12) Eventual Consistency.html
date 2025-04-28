@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>12) Eventual Consistency | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>12) Eventual Consistency</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: Eventual Consistency
+date: 18 Oct 2023
+tags: [subject/distributed-system, distributed-storage, consistency]</p>
+<hr />
+<h1 id="notes">Notes</h1>
+<p>Dynamo is similar to a Distributed Hash Table meaning it uses <a href="https://www.youtube.com/watch?v=zaRkONvyGr8&amp;pp=ygUSY29uc2lzdGVudCBoYXNoaW5n">consistent hashing</a>.</p>
+<p>Dynamo is called a zero-hop DHT because each node has enough information about the whole <strong>consistent hashing ring</strong> that it can directly transfer any client to the server responsible for serving that key.</p>
+<h2 id="causes-for-the-system-not-being-linearizable">Causes for the system not being linearizable</h2>
+<ol>
+<li>Initializing replication factor but not having the same number of writes/reads</li>
+<li>Membership changes<ol>
+<li>Discovery of membership changes is at different times, due to gossip protocol, causing writes to happen at different servers than intended.</li>
+<li>When key exchanges are happening and data is being written to the old server.</li>
+</ol>
+</li>
+</ol>
+<h2 id="vector-clock">Vector Clock</h2>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>9) Mongodb Replication | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>9) Mongodb Replication</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: MongoDB Replication
+date: 02 Oct 2023
+tags: [subject/distributed-system, distributed-storage]</p>
+<hr />
+<h1 id="notes">Notes</h1>
+<h2 id="background">Background</h2>
+<ol>
+<li>Already existing scheme used db query for replication</li>
+<li>Replication scheme was in such a way that any follower could query any other follower</li>
+</ol>
+<p>Due to this when they tried to implement RAFT there was a mismatch between the architecture and algorithm.
+So they decided to change the algorithm to implement in existing architecture.</p>
+<h2 id="problem">Problem</h2>
+<ol>
+<li>Querying will not give you the term number meaning you don't know if you're pulling from the leader or not and if the log entries are correct or not.</li>
+<li>Any other follower can pull from this stale follower.</li>
+</ol>
+<h2 id="solution">Solution</h2>
+<ol>
+<li>Use updateposition RPC to get the term.</li>
+</ol>
+<h2 id="implementation">Implementation</h2>
+<ol>
+<li>Reading can be done by batching read requests with other requests.</li>
+</ol>
+<h1 id="after-lecture">After lecture</h1>
+<ol>
+<li>Look up TiDB</li>
+<li>What is mmap?</li>
+<li>Why fsync twice?</li>
+<li>TLA+ verification</li>
+<li>FLP Theorem (https://ilyasergey.net/CS6213/week-03-bft.html)</li>
+</ol>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>22) Web3 | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>22) Web3</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: Web3
+date: 27 Nov 2023
+tags: [subject/distributed-system]</p>
+<hr />
+<h1 id="notes">Notes</h1>
+<h2 id="bittorrent">Bittorrent</h2>
+<p>Bittorrent is already a decentralized file sharing platform. </p>
+<h3 id="how-does-bittorrent-work">How does bittorrent work?</h3>
+<p>When a client receives a .torrent file, it uses the DHT embedded inside the .torrent file to contact the nearest node in the swarm. Once its connected, files can be transferred  in a peer to peer way.</p>
+<blockquote>
+<p>Problem with Bittorrent
+There is no incentive for anyone to keep sharing files. </p>
+</blockquote>
+<h2 id="ipfs">IPFS</h2>
+<p>We can store the map of file hash to the file contents in the blockchain using smart contract.
+This can cause the blockchain storage requirements to explode. </p>
+<p>To mitigate this issue we can store the file hash and the location in the blockchain. </p>
+<p>This can create the issue that the server claims that it has the file stored but not actually store it.</p>
+<p>Some kind of monitoring system to verify that files are stored. (Periodically monitoring is not an option because it can either just store the hash or if the file is supposed to be transferred somewhere and then its hash is checked then the network will be a bottleneck.)</p>
+<p>To solve this issue there was something called <mark style="background: #FFF3A3A6;">zero knowledge proof</mark> introduced.</p>
+<h3 id="zero-knowledge-proof">Zero knowledge Proof</h3>
+<p>Read the following sources(prof didn't explain that well) -
+1) <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">Wikipedia</a>
+2) <a href="https://ethereum.org/en/zero-knowledge-proofs/">Ethereum</a></p>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>

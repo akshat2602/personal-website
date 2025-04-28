@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>4) Rpc, Coroutine | Akshat Sharma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/theme-vars.css">
+    <link rel="stylesheet" href="/static/theme.css">
+    <link rel="stylesheet" href="/static/extended/highlight.css"> <!-- <- your dracula theme here -->
+    <link rel="stylesheet" href="/static/extended/sidenotes.css">
+    <link rel="stylesheet" href="/static/extended/bsky-comments.css">
+    <script src="/static/bsky-comments.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--theme);
+            color: var(--content);
+            max-width: var(--main-width);
+            margin: auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Akshat Sharma</a></h1>
+    </header>
+
+    <article>
+        <h2>4) Rpc, Coroutine</h2>
+        <small></small>
+        <div></div>
+        <section>
+            <hr />
+<p>title: RPC, Couroutines
+date: 11 Sep 2023
+tags: [subject/distributed-system]</p>
+<hr />
+<h1 id="til">TIL</h1>
+<ul>
+<li><strong>htop</strong></li>
+<li>C100k problem</li>
+<li>Timer interrupt(A periodic interrupt that allows the OS to stop the current thread's execution and schedule a different thread)</li>
+</ul>
+<h1 id="coroutine-notes">Coroutine Notes</h1>
+<h2 id="1-thread-and-n-thread">1-thread and n-thread:</h2>
+<h3 id="advantages">Advantages</h3>
+<table>
+<thead>
+<tr>
+<th>1 Thread</th>
+<th>n Threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memory/Performance</td>
+<td>Fairness in scheduling</td>
+</tr>
+<tr>
+<td>No locking</td>
+<td>Easier to understand and write the code</td>
+</tr>
+</tbody>
+</table>
+<h3 id="disadvantages">Disadvantages</h3>
+<table>
+<thead>
+<tr>
+<th>1 Thread</th>
+<th>n Threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stack Ripping</td>
+<td>Locking</td>
+</tr>
+<tr>
+<td>Debugging hard</td>
+<td>Hard on performance</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fibre-vs-coroutine-vs-async">Fibre vs Coroutine vs Async:</h2>
+<ul>
+<li>Fibre/Coroutines have their own stacks(benefits like stack trace/shared variables).</li>
+<li>Async is stackless. Also called as stackless coroutines.</li>
+</ul>
+<p>Stackless coroutines are implemented in - JS, C#, Rust, C++ 20
+Stackfull are implemented in - Golang, C++</p>
+<h1 id="rpc-notes">RPC Notes</h1>
+<p>Concepts like -</p>
+<ol>
+<li>At most once</li>
+<li>At least once</li>
+<li>Exactly once(technically impossible)</li>
+</ol>
+        </section>
+    </article>
+
+    <section>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Akshat Sharma</p>
+    </footer>
+</body>
+
+</html>
