@@ -33,6 +33,7 @@ type SiteConfig struct {
 	StaticDir      string
 	ProjectRoot    string
 	SocialIcons    []SocialIcon
+	MediaCDN       string // CDN URL for media (e.g., "https://cdn.akshatsharma.xyz")
 }
 
 // LoadSVGMap reads the PaperModX svg.toml and returns a name->svg map
@@ -144,6 +145,9 @@ func NewGenerator(config *SiteConfig) (*Generator, error) {
 
 // Build runs the full site build
 func (g *Generator) Build() error {
+	// Set global MediaCDN for URL rewriting
+	MediaCDN = g.Config.MediaCDN
+
 	fmt.Println("Loading posts...")
 	posts, err := LoadPosts(g.Config.ContentDir)
 	if err != nil {
@@ -452,6 +456,7 @@ func (g *Generator) generateSpecialPages() error {
 	if err == nil {
 		renderedHTML, err := RenderMarkdown(nowContent.Content)
 		if err == nil {
+			renderedHTML = RewriteMediaURLs(renderedHTML)
 			nowContent.HTML = renderedHTML
 		}
 		ctx := g.baseContext()
@@ -469,6 +474,7 @@ func (g *Generator) generateSpecialPages() error {
 	if err == nil {
 		renderedHTML, err := RenderMarkdown(wakaContent.Content)
 		if err == nil {
+			renderedHTML = RewriteMediaURLs(renderedHTML)
 			wakaContent.HTML = renderedHTML
 		}
 		ctx := g.baseContext()

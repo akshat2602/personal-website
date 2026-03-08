@@ -20,7 +20,7 @@ Our team won the MongoDB Gen AI Hackathon with "tiktokify," a tool generating 30
 ## The problem
 Going in, we knew we wanted to do something video related because let's face it, RAGs(Retrieval Augmented Generations) have already been proven to work pretty well and if you want create a high quality RAG then it becomes all about the quality of data. We wanted to try something different, something new, something video related, something which none of us had tried before. After the breakfast and some very quick talks by the sponsors of the hackathons, we started brainstorming about things we could try out in the video space.
 
-> {{< figure src="/media/images/media/images/RAG.png" align="center" >}}
+> {{< figure src="/media/images/RAG.png" align="center" >}}
 
 {{% sidenote "right" "rag-explanation-sidenote" "Retrieval Augmented Generation(RAGs) explained" %}} This image was taken from Pinecone's article about [RAGs](https://www.pinecone.io/learn/retrieval-augmented-generation/) {{% /sidenote %}}
 

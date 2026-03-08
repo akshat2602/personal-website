@@ -295,6 +295,23 @@ func RenderMarkdown(content string) (string, error) {
 	return buf.String(), nil
 }
 
+// MediaCDN is the CDN URL for media files (set during build)
+var MediaCDN = ""
+
+// RewriteMediaURLs rewrites /media/ URLs to use the CDN
+func RewriteMediaURLs(htmlContent string) string {
+	if MediaCDN == "" {
+		return htmlContent
+	}
+	// Match img src="/media/..." and rewrite to CDN URL
+	// Matches: src="/media/", src="/media/foo.png", etc.
+	re := regexp.MustCompile(`(src|href)=["'](\/media\/[^"']*)["']`)
+	return re.ReplaceAllStringFunc(htmlContent, func(match string) string {
+		result := re.ReplaceAllString(match, "$1=\""+MediaCDN+"$2\"")
+		return result
+	})
+}
+
 // GenerateTOC generates a table of contents from HTML
 func GenerateTOC(htmlContent string) []*TOCItem {
 	headingRe := regexp.MustCompile(`<h([1-6])[^>]*id="([^"]*)"[^>]*>([\s\S]*?)</h[1-6]>`)
@@ -370,6 +387,8 @@ func LoadPosts(dir string) ([]*Post, error) {
 		if err != nil {
 			return nil, fmt.Errorf("rendering %s: %w", entry.Name(), err)
 		}
+		// Rewrite /media/ URLs to CDN
+		htmlContent = RewriteMediaURLs(htmlContent)
 		post.HTML = htmlContent
 		post.Summary = GenerateSummary(htmlContent, 200)
 		post.TOC = GenerateTOC(htmlContent)

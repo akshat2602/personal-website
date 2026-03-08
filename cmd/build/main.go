@@ -25,7 +25,7 @@ func main() {
 	}
 
 	// Load SVG icon map
-	svgTomlPath := filepath.Join(projectRoot, "ssg-static", "svg.toml")
+	svgTomlPath := filepath.Join(projectRoot, "static", "svg.toml")
 	svgMap, err := internal.LoadSVGMap(svgTomlPath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "warning: could not load svg.toml: %v\n", err)
@@ -59,10 +59,11 @@ func main() {
 		Author:      "Akshat",
 		ContentDir:  filepath.Join(projectRoot, "content", "posts"),
 		OutputDir:   filepath.Join(projectRoot, "public"),
-		TemplateDir: filepath.Join(projectRoot, "ssg-templates"),
-		StaticDir:   filepath.Join(projectRoot, "ssg-static"),
+		TemplateDir: filepath.Join(projectRoot, "templates"),
+		StaticDir:   filepath.Join(projectRoot, "static"),
 		ProjectRoot: projectRoot,
 		SocialIcons: socialIcons,
+		MediaCDN:    "https://cdn.akshatsharma.xyz",
 	}
 
 	gen, err := internal.NewGenerator(config)
