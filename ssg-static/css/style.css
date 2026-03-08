@@ -312,6 +312,10 @@ button {
     font-size: 17px;
     color: var(--primary);
     line-height: 1.6em;
+    /* Override the 2-line clamp from .entry-content */
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
 }
 
 .home-info .entry-content a {

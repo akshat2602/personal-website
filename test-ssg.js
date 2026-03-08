@@ -37,6 +37,8 @@ async function runTests() {
     assert(await page.locator('.home-info').isVisible(), 'Home info section visible');
     assert(await page.locator('.home-info h1').innerText() !== '', 'Home info has heading');
     assert(await page.locator('.social-icons').isVisible(), 'Social icons visible');
+    const iconCount = await page.locator('.social-icons a').count();
+    assert(iconCount === 10, `All 10 social icons present (got ${iconCount})`);
     // Posts should be listed
     const postEntries = await page.locator('.post-entry').count();
     assert(postEntries > 0, `Post entries visible on home (found ${postEntries})`);

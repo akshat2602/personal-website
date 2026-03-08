@@ -10,8 +10,16 @@ import (
 	"strings"
 	"time"
 
+	"github.com/BurntSushi/toml"
 	"github.com/flosch/pongo2/v6"
 )
+
+// SocialIcon is a single social link entry
+type SocialIcon struct {
+	Name string
+	URL  string
+	SVG  string // raw SVG HTML
+}
 
 // SiteConfig holds site-wide configuration
 type SiteConfig struct {
@@ -23,7 +31,41 @@ type SiteConfig struct {
 	OutputDir      string
 	TemplateDir    string
 	StaticDir      string
-	ProjectRoot    string // root of the project
+	ProjectRoot    string
+	SocialIcons    []SocialIcon
+}
+
+// LoadSVGMap reads the PaperModX svg.toml and returns a name->svg map
+func LoadSVGMap(svgTomlPath string) (map[string]string, error) {
+	var raw map[string]string
+	if _, err := toml.DecodeFile(svgTomlPath, &raw); err != nil {
+		return nil, err
+	}
+	return raw, nil
+}
+
+// BuildSocialIcons resolves SVG icons for each social entry
+func BuildSocialIcons(names []string, urls []string, svgMap map[string]string) []SocialIcon {
+	icons := make([]SocialIcon, 0, len(names))
+	for i, name := range names {
+		if i >= len(urls) {
+			break
+		}
+		key := strings.ToLower(strings.TrimSpace(name))
+		// Cal.com -> calcom
+		key = strings.ReplaceAll(key, ".", "")
+		key = strings.ReplaceAll(key, " ", "")
+		svg := svgMap[key]
+		if svg == "" {
+			svg = svgMap["default"]
+		}
+		icons = append(icons, SocialIcon{
+			Name: name,
+			URL:  strings.TrimSpace(urls[i]),
+			SVG:  strings.TrimSpace(svg),
+		})
+	}
+	return icons
 }
 
 // PageData is the data passed to templates
@@ -201,8 +243,9 @@ func (g *Generator) render(templateName string, data pongo2.Context, outPath str
 
 func (g *Generator) baseContext() pongo2.Context {
 	return pongo2.Context{
-		"site": g.Config,
-		"year": time.Now().Year(),
+		"site":         g.Config,
+		"year":         time.Now().Year(),
+		"social_icons": g.Config.SocialIcons,
 	}
 }
 
