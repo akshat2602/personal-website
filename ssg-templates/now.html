@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block canonical_path %}/now/{% endblock %}
+
+{% block main %}
+<header class="page-header">
+    <h1>{{ post.Title }}</h1>
+</header>
+{% if post.HTML %}
+<div class="post-content">
+    {{ post.HTML|safe }}
+</div>
+{% endif %}
+{% endblock %}

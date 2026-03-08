@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block main_class %} post{% endblock %}
+
+{% block opengraph %}
+<meta property="og:title" content="{{ post.Title }} | {{ site.Title }}">
+<meta property="og:description" content="{{ post_description }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ site.BaseURL }}{{ post.RelURL }}">
+{% if post.OGImage %}
+<meta property="og:image" content="{{ site.BaseURL }}/og/{{ post.Slug }}.png">
+<meta name="twitter:image" content="{{ site.BaseURL }}/og/{{ post.Slug }}.png">
+{% else %}
+<meta property="og:image" content="{{ site.BaseURL }}/index.png">
+<meta name="twitter:image" content="{{ site.BaseURL }}/index.png">
+{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ post.Title }} | {{ site.Title }}">
+<meta name="twitter:description" content="{{ post_description }}">
+{% endblock %}
+
+{% block canonical_path %}{{ post.RelURL }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ post_description }}">
+<meta name="author" content="{{ site.Author }}">
+{% if post.Tags %}
+<meta name="keywords" content="{{ post.Tags|join:", " }}">
+{% endif %}
+{% endblock %}
+
+{% block main %}
+<article class="post-single">
+    <header class="post-header">
+        <div class="breadcrumbs">
+            <a href="/">Home</a>
+            <span class="sep">&nbsp;»&nbsp;</span>
+            <a href="/posts/">Posts</a>
+        </div>
+        <h1 class="post-title">{{ post.Title }}</h1>
+        {% if post.Description %}
+        <div class="post-description">{{ post_description }}</div>
+        {% endif %}
+        <div class="post-meta">
+            {% if post.DateStr %}<span class="meta-item">{{ post.DateStr }}</span>{% endif %}
+            {% if post.ReadingTime %}<span class="meta-item">{{ post.ReadingTime }} min read</span>{% endif %}
+            {% if post.WordCount %}<span class="meta-item">{{ post.WordCount }} words</span>{% endif %}
+            {% if post.Tags %}
+            <span class="meta-item">
+                {% for tag in post.Tags %}
+                <a href="/tags/{{ tag|slugify }}/">#{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </span>
+            {% endif %}
+            <span class="meta-item"><a href="https://github.com/akshat2602/personal-website/tree/master/content/posts/{{ post.Filename }}" target="_blank" rel="noopener">Suggest Changes</a></span>
+        </div>
+    </header>
+
+    {% include "partials/toc.html" %}
+
+    {% if post.HTML %}
+    <div class="post-content">
+        {{ post.HTML|safe }}
+    </div>
+    {% endif %}
+
+    <footer class="post-footer">
+        {% if prev_post or next_post %}
+        <nav class="paginav">
+            {% if prev_post %}
+            <a class="prev" href="{{ prev_post.RelURL }}">
+                <span class="title">« Older</span>
+                <br>
+                <span>{{ prev_post.Title }}</span>
+            </a>
+            {% endif %}
+            {% if next_post %}
+            <a class="next" href="{{ next_post.RelURL }}">
+                <span class="title">Newer »</span>
+                <br>
+                <span>{{ next_post.Title }}</span>
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?text={{ post.Title|urlencode }}&url={{ site.BaseURL }}{{ post.RelURL|urlencode }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.518-8.543L1.57 2.25h6.798l4.197 5.543 5.68-5.543zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://news.ycombinator.com/submitlink?u={{ site.BaseURL }}{{ post.RelURL|urlencode }}&t={{ post.Title|urlencode }}" target="_blank" rel="noopener" aria-label="Share on HackerNews">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896H6.95z"/></svg>
+            </a>
+        </div>
+    </footer>
+
+    {% if not post.NoComments and post.Bsky %}
+    <div id="comments-section" data-bsky-uri="{{ post.Bsky }}"></div>
+    <script src="/js/bsky-comments.js"></script>
+    {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block canonical_path %}/posts/{% endblock %}
+
+{% block main %}
+<header class="page-header">
+    <h1>Posts</h1>
+</header>
+
+{% for yg in year_groups %}
+<div class="archive-year">
+    <h2 class="archive-year-header">
+        {{ yg.Year }}<sup class="archive-count">&nbsp;&nbsp;{{ yg.Count }}</sup>
+    </h2>
+    {% for mg in yg.Months %}
+    <div class="archive-month">
+        <h3 class="archive-month-header">{{ mg.Month }}<sup class="archive-count">&nbsp;&nbsp;{{ mg.Posts|length }}</sup></h3>
+        <div class="archive-posts">
+            {% for post in mg.Posts %}
+            <div class="archive-entry">
+                <h3 class="archive-entry-title">
+                    <a href="{{ post.RelURL }}">{{ post.Title }}</a>
+                </h3>
+                <div class="archive-meta">{{ post.DateStr }}</div>
+                <a class="entry-link" aria-label="post link to {{ post.Title }}" href="{{ post.RelURL }}"></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block canonical_path %}/tags/{{ tag_slug }}/{% endblock %}
+
+{% block main %}
+<header class="page-header">
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="sep">&nbsp;»&nbsp;</span>
+        <a href="/tags/">Tags</a>
+    </div>
+    <h1>tag: {{ tag }}</h1>
+</header>
+
+{% for post in posts %}
+<article class="post-entry tag-entry">
+    <header class="entry-header">
+        <h2>{{ post.Title }}</h2>
+    </header>
+    <section class="entry-content">
+        <p>{{ post.Summary }}</p>
+    </section>
+    <footer class="entry-footer">
+        {% if post.DateStr %}<span>{{ post.DateStr }}</span>{% endif %}
+        {% if post.ReadingTime %} · <span>{{ post.ReadingTime }} min read</span>{% endif %}
+    </footer>
+    <a class="entry-link" aria-label="post link to {{ post.Title }}" href="{{ post.RelURL }}"></a>
+</article>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% if post.TOC %}
+<div class="toc side left">
+    <details>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+        <div class="inner">
+            <ul>
+            {% for item in post.TOC %}
+                <li style="margin-left: {{ (item.Level - 1) * 16 }}px">
+                    <a href="#{{ item.ID }}">{{ item.Text }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </details>
+</div>
+{% endif %}
