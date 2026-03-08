@@ -827,21 +827,8 @@ button {
 .toc ul {
     margin: 0;
     padding: 0;
-    list-style: none;
-}
-
-.toc li {
-    position: relative;
-    padding-left: 15px;
-}
-
-.toc li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-size: 0.8em;
-    top: 0.1em;
+    list-style: disc;
+    list-style-position: inside;
 }
 
 .toc li ul {
