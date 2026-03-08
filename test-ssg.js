@@ -118,12 +118,20 @@ async function runTests() {
         return el ? el.innerText.trim() : '';
     });
     assert(sidenoteText.length > 0, `Sidenote content has text (got: "${sidenoteText.substring(0,50)}")`);
-    // Sidenote is positioned relative to its parent (not body)
-    const sidenoteContainerPos = await page.evaluate(() => {
-        const el = document.querySelector('.sidenote');
+    // .post-content is the containing block for sidenote absolute positioning
+    const postContentPos = await page.evaluate(() => {
+        const el = document.querySelector('.post-content');
         return el ? window.getComputedStyle(el).position : null;
     });
-    assert(sidenoteContainerPos === 'relative', `Sidenote container is position:relative (got: ${sidenoteContainerPos})`);
+    assert(postContentPos === 'relative', `post-content is position:relative for sidenote containment (got: ${postContentPos})`);
+    // Sidenote content is to the right of the post content, not overlapping
+    const sidenoteNotOverlapping = await page.evaluate(() => {
+        const snC = document.querySelector('.sidenote-content.sidenote-right');
+        const postC = document.querySelector('.post-content');
+        if (!snC || !postC) return false;
+        return snC.getBoundingClientRect().left >= postC.getBoundingClientRect().right - 20;
+    });
+    assert(sidenoteNotOverlapping, 'Sidenote content is in right margin, not overlapping post text');
 
     // ── 6. Table of Contents ────────────────────────────────────────────────
     console.log('\n[6] Table of Contents');
