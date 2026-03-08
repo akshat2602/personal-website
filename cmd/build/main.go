@@ -24,8 +24,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Load SVG icon map from the theme data file
-	svgTomlPath := filepath.Join(projectRoot, "themes", "PaperModX", "data", "svg.toml")
+	// Load SVG icon map
+	svgTomlPath := filepath.Join(projectRoot, "ssg-static", "svg.toml")
 	svgMap, err := internal.LoadSVGMap(svgTomlPath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "warning: could not load svg.toml: %v\n", err)

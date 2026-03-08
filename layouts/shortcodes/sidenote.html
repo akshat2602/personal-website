@@ -1,7 +1,0 @@
-<span class="sidenote">
-    <label class="sidenote-label" for="{{ .Get 1 }}">{{ .Get 2 }}</label>
-    <input class="sidenote-checkbox" type="checkbox" id="{{ .Get 1 }}"></input>
-    <span class="sidenote-content sidenote-{{ .Get 0 }}">
-        {{ .Inner | safeHTML | markdownify }}
-    </span>
-</span>
