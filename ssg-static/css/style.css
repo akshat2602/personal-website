@@ -55,18 +55,18 @@ body {
     --content: rgb(255, 255, 255);
     --code-bg: rgb(28, 27, 36);
     --border: var(--link-hover-color);
-    --header-border: var(--link-hover-color);
     --link-background-color: #5242746d;
     --link-color: var(--primary);
     --link-hover-color: #6272a4;
-    --link-header-color: #F273BD;
     --link-underline-shadow: 0 1px 0 var(--link-color);
     --link-hover-underline-color: var(--link-hover-color);
     --link-hover-underline-shadow: 0 2px 0 var(--link-hover-underline-color);
-    --code-shadow: rgba(0, 0, 0, 0.3);
-    --alert-primary: rgb(100, 149, 237);
-    --alert-warning: rgb(255, 99, 71);
     --signature: var(--primary);
+    --shadow-color: 0deg 0% 0%;
+    --shadow-elevation-low:
+        0.6px 0.6px 1px hsl(var(--shadow-color) / 0.1),
+        0.9px 0.9px 1.4px -1.2px hsl(var(--shadow-color) / 0.1),
+        2.2px 2.2px 3.5px -2.5px hsl(var(--shadow-color) / 0.1);
 }
 
 /* ============================================================
@@ -154,55 +154,38 @@ button {
     top: 0;
     z-index: 10;
     background: var(--theme);
-    border-bottom: 1px solid var(--header-border);
 }
 
 .nav {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     max-width: calc(var(--nav-width) + var(--gap) * 2);
-    margin: 0 auto;
-    padding: 0 var(--gap);
-    height: var(--header-height);
-    overflow: hidden;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    line-height: var(--header-height);
 }
 
-@media screen and (max-width: 600px) {
-    .nav {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 8px var(--gap);
-    }
-    .logo {
-        width: 100%;
-        margin-bottom: 4px;
-    }
-    #menu {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding-bottom: 8px;
-    }
-    #menu li + li {
-        margin-inline-start: 0;
-    }
+.nav ul {
+    margin: 0;
+    padding: 0;
 }
 
 .logo a {
     font-size: 24px;
     font-weight: 700;
-    color: var(--link-header-color);
+    color: var(--primary);
     display: block;
 }
 
 .logo,
 #menu {
     display: flex;
-    align-items: center;
-    margin: auto 0;
+    margin: auto var(--gap);
+}
+
+.logo {
+    flex-wrap: inherit;
 }
 
 #menu {
@@ -210,7 +193,6 @@ button {
     word-break: keep-all;
     overflow-x: auto;
     white-space: nowrap;
-    gap: var(--gap);
 }
 
 #menu li + li {
