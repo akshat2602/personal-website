@@ -633,36 +633,86 @@ button {
     font-family: var(--monospace);
 }
 
+.post-content pre {
+    position: relative;
+    background: #1e1e2e;
+    border: 1px solid #313244;
+    border-radius: 8px;
+    margin: var(--content-gap) auto;
+    overflow: visible;
+}
+
 .post-content pre code {
     display: block;
     margin: auto 0;
-    padding: 15px;
+    padding: 16px;
     overflow-x: auto;
-    border-radius: var(--radius);
+    border-radius: 8px;
     word-break: break-all;
-    background-color: initial;
+    background-color: transparent;
+    color: #cdd6f4;
+    font-size: 0.9em;
+    line-height: 1.6;
 }
 
 .post-content .highlight {
     margin: var(--content-gap) auto;
-    border-radius: var(--radius);
+    border-radius: 8px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    background: #1e1e2e;
+    border: 1px solid #313244;
 }
 
 .post-content .highlight pre {
     margin: 0;
-    border-radius: var(--radius);
+    border-radius: 8px;
+    background: transparent;
 }
 
 .post-content .chroma {
-    border-radius: var(--radius);
+    border-radius: 8px;
+    background: #1e1e2e;
+    border: 1px solid #313244;
 }
 
 .post-content .chroma code {
     background-color: inherit;
-    padding: 0;
+    padding: 16px;
     margin: 0;
+}
+
+/* copy code button */
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #313244;
+    border: 1px solid #45475a;
+    border-radius: 4px;
+    color: #a6adc8;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 4px 8px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    font-family: var(--font);
+}
+
+.post-content pre:hover .copy-btn,
+.copy-btn:focus {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    background: #45475a;
+    color: #cdd6f4;
+}
+
+.copy-btn.copied {
+    background: #a6e3a1;
+    color: #1e1e2e;
+    border-color: #a6e3a1;
 }
 
 .post-content iframe {
