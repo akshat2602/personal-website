@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block main %}
+<article class="home-info">
+    <header class="entry-header">
+        <h1><em>a student and an engineer</em></h1>
+    </header>
+    <section class="entry-content">
+        <p>hi 👋, my name is Akshat Sharma, I'm currently a CS grad student working in the <a href="https://www.fsl.cs.stonybrook.edu/">File Systems and Storage Lab (FSL)</a> at Stony Brook University.</p>
+        <p>I'm currently researching secure archival storage systems and their applications. I'm interested in learning about databases, operation systems, distributed systems and have worked in distributed systems at <a href="http://mpaxos.com">Stony Systems Lab</a> before working in FSL.</p>
+        <p>Here, I post things that I find interesting/notes that I want to share with the world.</p>
+    </section>
+    <footer class="entry-footer">
+        <div class="social-icons">
+            Socials:
+            <br />
+            {% for icon in social_icons %}
+            <a href="{{ icon.URL }}" title="{{ icon.Name }}"
+               {% if icon.Name != "rss" %}target="_blank" rel="noopener noreferrer me"{% endif %}>
+                {{ icon.SVG|safe }}
+            </a>
+            {% endfor %}
+        </div>
+    </footer>
+</article>
+
+{% for post in posts %}
+<article class="post-entry">
+    <header class="entry-header">
+        <h2>{{ post.Title }}</h2>
+    </header>
+    <section class="entry-content">
+        <p>{{ post.Summary }}</p>
+    </section>
+    <footer class="entry-footer">
+        {% if post.DateStr %}<span>{{ post.DateStr }}</span>{% endif %}
+        {% if post.ReadingTime %} · <span>{{ post.ReadingTime }} min read</span>{% endif %}
+    </footer>
+    <a class="entry-link" aria-label="post link to {{ post.Title }}" href="{{ post.RelURL }}"></a>
+</article>
+{% endfor %}
+
+{% if total_pages > 1 %}
+<footer class="page-footer">
+    <nav class="pagination">
+        {% if has_prev %}<a class="prev" href="{{ prev_url }}">« Newer</a>{% endif %}
+        {% if has_next %}<a class="next" href="{{ next_url }}">Older »</a>{% endif %}
+    </nav>
+</footer>
+{% endif %}
+{% endblock %}

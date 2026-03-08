@@ -1,0 +1,14 @@
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="{{ site.Title }}">{{ site.Title }}</a>
+        </div>
+        <ul id="menu">
+            <li><a href="/posts/" {% if current_path == "/posts/" %}class="active"{% endif %}>posts</a></li>
+            <li><a href="/tags/" {% if current_path == "/tags/" %}class="active"{% endif %}>tags</a></li>
+            <li><a href="/search/" {% if current_path == "/search/" %}class="active"{% endif %}>search</a></li>
+            <li><a href="/now/" {% if current_path == "/now/" %}class="active"{% endif %}>now</a></li>
+            <li><a href="https://resume.akshatsharma.xyz/" target="_blank" rel="noopener">resume <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:relative;top:1px;margin-left:2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+        </ul>
+    </nav>
+</header>

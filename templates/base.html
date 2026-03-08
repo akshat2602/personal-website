@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+
+    <title>{% block title %}{{ page_title|default:"Akshat Sharma" }}{% endblock %}</title>
+
+    {% block meta %}
+    <meta name="description" content="{{ site.Description }}">
+    <meta name="author" content="{{ site.Author }}">
+    {% endblock %}
+
+    {% block opengraph %}
+    <meta property="og:title" content="{{ page_title|default:"Akshat Sharma" }}">
+    <meta property="og:description" content="{{ site.Description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.BaseURL }}">
+    <meta property="og:image" content="{{ site.BaseURL }}/index.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page_title|default:"Akshat Sharma" }}">
+    <meta name="twitter:description" content="{{ site.Description }}">
+    <meta name="twitter:image" content="{{ site.BaseURL }}/index.png">
+    {% endblock %}
+
+    <link rel="canonical" href="{{ site.BaseURL }}{% block canonical_path %}/{% endblock %}">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}/index.xml" title="{{ site.Title }}">
+    <link rel="stylesheet" href="/css/style.css">
+
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+{% include "partials/header.html" %}
+
+<main class="main{% block main_class %}{% endblock %}">
+    {% block main %}{% endblock %}
+</main>
+
+{% include "partials/footer.html" %}
+
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+
+<script src="/js/medium-zoom.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        mediumZoom('article img:not(.avatar)', {
+            margin: 16,
+            background: 'rgba(0,0,0,0.85)'
+        });
+    });
+</script>
+
+<script src="/js/copy-code.js"></script>
+
+{% block body_scripts %}{% endblock %}
+
+</body>
+</html>

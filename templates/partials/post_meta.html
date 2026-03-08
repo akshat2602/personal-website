@@ -1,0 +1,8 @@
+{% if post.DateStr %}<span class="meta-item">{{ post.DateStr }}</span>{% endif %}
+{% if post.ReadingTime %}<span class="meta-item">{{ post.ReadingTime }} min read</span>{% endif %}
+{% if post.WordCount %}<span class="meta-item">{{ post.WordCount }} words</span>{% endif %}
+{% if post.Tags %}<span class="meta-item post-tags">
+    {%- for tag in post.Tags -%}
+    <a href="/tags/{{ tag|slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+    {%- endfor -%}
+</span>{% endif %}

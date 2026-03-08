@@ -1,4 +1,8 @@
 .hugo_build.lock
 public/
-
+resources/
 static/media
+
+# Node
+node_modules/
+package-lock.json
