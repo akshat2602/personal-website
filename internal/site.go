@@ -44,7 +44,9 @@ func LoadSVGMap(svgTomlPath string) (map[string]string, error) {
 	return raw, nil
 }
 
-// BuildSocialIcons resolves SVG icons for each social entry
+// BuildSocialIcons resolves SVG icons for each social entry.
+// Matches Hugo's behavior: lowercase + trim the name, look up in svgMap,
+// fall back to svgMap["default"] if not found (e.g. "Cal.com" -> "cal.com" -> default link icon).
 func BuildSocialIcons(names []string, urls []string, svgMap map[string]string) []SocialIcon {
 	icons := make([]SocialIcon, 0, len(names))
 	for i, name := range names {
@@ -52,9 +54,6 @@ func BuildSocialIcons(names []string, urls []string, svgMap map[string]string) [
 			break
 		}
 		key := strings.ToLower(strings.TrimSpace(name))
-		// Cal.com -> calcom
-		key = strings.ReplaceAll(key, ".", "")
-		key = strings.ReplaceAll(key, " ", "")
 		svg := svgMap[key]
 		if svg == "" {
 			svg = svgMap["default"]

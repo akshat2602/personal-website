@@ -12,6 +12,8 @@
     </section>
     <footer class="entry-footer">
         <div class="social-icons">
+            Socials:
+            <br />
             {% for icon in social_icons %}
             <a href="{{ icon.URL }}" title="{{ icon.Name }}"
                {% if icon.Name != "rss" %}target="_blank" rel="noopener noreferrer me"{% endif %}>

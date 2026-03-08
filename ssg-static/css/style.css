@@ -341,23 +341,24 @@ button {
 /* social icons */
 .social-icons {
     padding: 12px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    font-size: 14px;
+    color: var(--secondary);
 }
 
 .social-icons a {
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
     line-height: 20px;
     color: var(--secondary);
     transition: var(--link-transition);
 }
 
+.social-icons a:not(:last-of-type) {
+    margin-right: 12px;
+}
+
 .social-icons a svg {
-    height: 24px;
-    width: 24px;
-    fill: currentColor;
+    height: 26px;
+    width: 26px;
 }
 
 .social-icons a:hover {
