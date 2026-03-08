@@ -510,6 +510,39 @@ button {
 .post-content h5 { margin: 24px 0 16px; font-size: 14px; }
 .post-content h6 { margin: 24px 0 16px; font-size: 12px; }
 
+/* heading anchor links */
+.post-content h1[id],
+.post-content h2[id],
+.post-content h3[id],
+.post-content h4[id],
+.post-content h5[id],
+.post-content h6[id] {
+    position: relative;
+}
+
+.post-content h1[id]:hover .anchor-link,
+.post-content h2[id]:hover .anchor-link,
+.post-content h3[id]:hover .anchor-link,
+.post-content h4[id]:hover .anchor-link,
+.post-content h5[id]:hover .anchor-link,
+.post-content h6[id]:hover .anchor-link {
+    opacity: 1;
+}
+
+.anchor-link {
+    position: absolute;
+    left: -24px;
+    color: var(--secondary);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-weight: 400;
+}
+
+.anchor-link:hover {
+    color: var(--primary);
+}
+
 .post-content a {
     font-weight: 500;
     color: var(--primary);
@@ -797,6 +830,20 @@ button {
     list-style: none;
 }
 
+.toc li {
+    position: relative;
+    padding-left: 15px;
+}
+
+.toc li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 0.8em;
+    top: 0.1em;
+}
+
 .toc li ul {
     margin-inline-start: 20px;
 }
@@ -808,6 +855,7 @@ button {
     display: block;
     color: var(--secondary);
     transition: var(--link-transition);
+    text-decoration: none;
 }
 
 .toc li a:hover {
