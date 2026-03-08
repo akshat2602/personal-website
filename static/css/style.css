@@ -842,7 +842,7 @@ button {
     line-height: 1.5em;
     padding: 3px 5px;
     border-radius: 5px;
-    display: block;
+    display: inline;
     color: var(--secondary);
     transition: var(--link-transition);
     text-decoration: none;
