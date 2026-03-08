@@ -112,6 +112,18 @@ async function runTests() {
         return window.getComputedStyle(el).position;
     });
     assert(sidenoteRightPos === 'absolute', `Sidenote-right is absolute positioned (got: ${sidenoteRightPos})`);
+    // Sidenote content has actual text (no wrapping <p> tags)
+    const sidenoteText = await page.evaluate(() => {
+        const el = document.querySelector('.sidenote-content.sidenote-right');
+        return el ? el.innerText.trim() : '';
+    });
+    assert(sidenoteText.length > 0, `Sidenote content has text (got: "${sidenoteText.substring(0,50)}")`);
+    // Sidenote is positioned relative to its parent (not body)
+    const sidenoteContainerPos = await page.evaluate(() => {
+        const el = document.querySelector('.sidenote');
+        return el ? window.getComputedStyle(el).position : null;
+    });
+    assert(sidenoteContainerPos === 'relative', `Sidenote container is position:relative (got: ${sidenoteContainerPos})`);
 
     // ── 6. Table of Contents ────────────────────────────────────────────────
     console.log('\n[6] Table of Contents');

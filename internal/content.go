@@ -242,7 +242,8 @@ func extractAttr(attrs, name string) string {
 	return ""
 }
 
-// renderInlineMarkdown renders a small snippet of markdown to HTML
+// renderInlineMarkdown renders a small snippet of markdown to inline HTML.
+// Strips wrapping <p> tags so the result is safe to embed inside a <span>.
 func renderInlineMarkdown(md string) string {
 	var buf bytes.Buffer
 	if err := goldmark.New(
@@ -251,6 +252,14 @@ func renderInlineMarkdown(md string) string {
 		return md
 	}
 	result := strings.TrimSpace(buf.String())
+	// Strip single wrapping <p>...</p> so inline content works inside <span>
+	if strings.HasPrefix(result, "<p>") && strings.HasSuffix(result, "</p>") {
+		// Only strip if there's exactly one <p> wrapping the whole thing
+		inner := result[3 : len(result)-4]
+		if !strings.Contains(inner, "<p>") {
+			return strings.TrimSpace(inner)
+		}
+	}
 	return result
 }
 

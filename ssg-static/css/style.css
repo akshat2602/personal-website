@@ -1042,6 +1042,10 @@ button {
 /* ============================================================
    SIDENOTES
    ============================================================ */
+.sidenote {
+    position: relative;
+}
+
 .sidenote:hover .sidenote-label {
     background-color: var(--link-hover-color);
     color: #fff;
