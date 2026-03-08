@@ -292,7 +292,15 @@ func RenderMarkdown(content string) (string, error) {
 	if err := md.Convert([]byte(content), &buf); err != nil {
 		return "", fmt.Errorf("rendering markdown: %w", err)
 	}
-	return buf.String(), nil
+	
+	html := buf.String()
+	html = addLazyLoadingToImages(html)
+	return html, nil
+}
+
+func addLazyLoadingToImages(html string) string {
+	re := regexp.MustCompile(`<img\s+src="([^"]*)"`)
+	return re.ReplaceAllString(html, `<img loading="lazy" src="$1"`)
 }
 
 // MediaCDN is the CDN URL for media files (set during build)

@@ -84,12 +84,12 @@
         </nav>
         {% endif %}
 
-        <div class="share-buttons">
+        <div class="share-buttons" aria-label="Share this post">
             <a href="https://twitter.com/intent/tweet?text={{ post.Title|urlencode }}&url={{ site.BaseURL }}{{ post.RelURL|urlencode }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.518-8.543L1.57 2.25h6.798l4.197 5.543 5.68-5.543zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.518-8.543L1.57 2.25h6.798l4.197 5.543 5.68-5.543zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <a href="https://news.ycombinator.com/submitlink?u={{ site.BaseURL }}{{ post.RelURL|urlencode }}&t={{ post.Title|urlencode }}" target="_blank" rel="noopener" aria-label="Share on HackerNews">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896H6.95z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896H6.95z"/></svg>
             </a>
         </div>
     </footer>

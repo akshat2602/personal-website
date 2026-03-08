@@ -12,11 +12,11 @@
     </section>
     <footer class="entry-footer">
         <div class="social-icons">
-            Socials:
-            <br />
+            <span class="sr-only">Social media links:</span>
             {% for icon in social_icons %}
             <a href="{{ icon.URL }}" title="{{ icon.Name }}"
-               {% if icon.Name != "rss" %}target="_blank" rel="noopener noreferrer me"{% endif %}>
+               {% if icon.Name != "rss" %}target="_blank" rel="noopener noreferrer me"{% endif %}
+               aria-label="{{ icon.Name }}">
                 {{ icon.SVG|safe }}
             </a>
             {% endfor %}

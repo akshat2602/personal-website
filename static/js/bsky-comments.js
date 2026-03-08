@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const commentsSection = document.getElementById("comments-section");
     const bskyWebUrl = commentsSection?.getAttribute("data-bsky-uri");
     
-    console.log("BSky Web URL:", bskyWebUrl);
     if (!bskyWebUrl) return;
 
     (async () => {
         try {
             const atUri = await extractAtUri(bskyWebUrl);
-            console.log("Extracted AT URI:", atUri);
 
             const thread = await getPostThread(atUri);
 
@@ -21,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 commentsSection.textContent = "Error fetching comments.";
             }
         } catch (error) {
-            console.error("Error loading comments:", error);
             commentsSection.textContent = "Error loading comments.";
         }
     })();
@@ -64,17 +61,13 @@ async function extractAtUri(webUrl) {
 
         return `at://${did}/app.bsky.feed.post/${postID}`;
     } catch (error) {
-        console.error("Error extracting AT URI:", error);
         throw error;
     }
 }
 
 async function getPostThread(atUri) {
-    console.log("getPostThread called with atUri:", atUri);
     const params = new URLSearchParams({ uri: atUri });
     const apiUrl = `https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?${params.toString()}`;
-
-    console.log("API URL:", apiUrl);
 
     const res = await fetch(apiUrl, {
         method: "GET",
@@ -86,7 +79,6 @@ async function getPostThread(atUri) {
 
     if (!res.ok) {
         const errorText = await res.text();
-        console.error("API Error:", errorText);
         throw new Error(`Failed to fetch post thread: ${errorText}`);
     }
 

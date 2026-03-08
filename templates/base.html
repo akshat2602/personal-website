@@ -30,20 +30,31 @@
     <link rel="apple-touch-icon" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" href="{{ site.BaseURL }}/index.xml" title="{{ site.Title }}">
     <link rel="stylesheet" href="/css/style.css">
+    
+    {# Resource hints for external domains #}
+    <link rel="preconnect" href="https://cdn.akshatsharma.xyz" crossorigin>
+    <link rel="preconnect" href="https://bsky.social" crossorigin>
+    <link rel="preconnect" href="https://public.api.bsky.app" crossorigin>
 
     {% block head_extra %}{% endblock %}
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 {% include "partials/header.html" %}
 
-<main class="main{% block main_class %}{% endblock %}">
+<main id="main-content" class="main{% block main_class %}{% endblock %}">
     {% block main %}{% endblock %}
 </main>
 
 {% include "partials/footer.html" %}
 
-<script>
+<script src="/js/medium-zoom.min.js" defer></script>
+<script src="/js/copy-code.js" defer></script>
+<script src="/js/anchor-links.js" defer></script>
+
+<script defer>
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -56,8 +67,7 @@
     };
 </script>
 
-<script src="/js/medium-zoom.min.js"></script>
-<script>
+<script defer>
     document.addEventListener("DOMContentLoaded", function() {
         mediumZoom('article img:not(.avatar)', {
             margin: 16,
@@ -65,9 +75,6 @@
         });
     });
 </script>
-
-<script src="/js/copy-code.js"></script>
-<script src="/js/anchor-links.js"></script>
 
 {% block body_scripts %}{% endblock %}
 
