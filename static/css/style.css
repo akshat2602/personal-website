@@ -827,6 +827,9 @@ button {
 .toc ul {
     margin: 0;
     padding: 0;
+}
+
+.toc li {
     list-style: disc;
     list-style-position: inside;
 }
